@@ -1,14 +1,23 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiMail, FiMapPin, FiUser, FiSend } from 'react-icons/fi';
+import React from "react";
+import { motion } from "framer-motion";
+import { FiMail, FiMapPin, FiUser, FiSend } from "react-icons/fi";
+import Aurora from "../../animation/Aurora";
 
 const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen py-20 bg-base-100 text-base-content"
+      className="min-h-screen py-20 bg-base-100 text-base-content relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="absolute inset-0 opacity-30">
+        <Aurora
+          colorStops={["#007aff", "#00d390", "#FF3232"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
+      <div className="max-w-6xl mx-auto px-6 z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -19,8 +28,8 @@ const Contact = () => {
         >
           <h2 className="text-4xl font-extrabold mb-3">Contact Me</h2>
           <p className="text-gray-300 max-w-lg mx-auto">
-            I’m always open to new opportunities and collaborations. Feel free to
-            reach out via the form or my contact details.
+            I’m always open to new opportunities and collaborations. Feel free
+            to reach out via the form or my contact details.
           </p>
         </motion.div>
 
@@ -36,38 +45,37 @@ const Contact = () => {
             {[
               {
                 icon: <FiUser className="text-primary text-3xl" />,
-                label: 'Name',
-                value: 'Belal Hossen',
+                label: "Name",
+                value: "Belal Hossen",
               },
               {
                 icon: <FiMail className="text-primary text-3xl" />,
-                label: 'Email',
-                value: 'programmer.m.belal@gmail.com',
+                label: "Email",
+                value: "programmer.m.belal@gmail.com",
               },
               {
                 icon: <FiMapPin className="text-primary text-3xl" />,
-                label: 'Location',
-                value: 'Dhaka, Bangladesh',
+                label: "Location",
+                value: "Dhaka, Bangladesh",
               },
               {
-                icon: (
-                  <FiMail className="text-green-500 text-3xl rotate-45" />
-                ),
-                label: 'WhatsApp',
-                value: '+8801752751232',
-                link: 'https://wa.me/8801752751232',
+                icon: <FiMail className="text-green-500 text-3xl rotate-45" />,
+                label: "WhatsApp",
+                value: "+8801752751232",
+                link: "https://wa.me/8801752751232",
               },
-              
             ].map(({ icon, label, value, link }, idx) => (
               <div
                 key={idx}
                 className="flex items-center gap-5 bg-base-200 p-5 rounded-xl shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-                onClick={() => link && window.open(link, '_blank')}
+                onClick={() => link && window.open(link, "_blank")}
               >
                 <div>{icon}</div>
                 <div>
                   <p className="text-sm font-semibold text-gray-400">{label}</p>
-                  <p className="text-lg font-medium text-base-content">{value}</p>
+                  <p className="text-lg font-medium text-base-content text-wrap break-all">
+                    {value}
+                  </p>
                 </div>
               </div>
             ))}
@@ -83,7 +91,7 @@ const Contact = () => {
             onSubmit={(e) => {
               e.preventDefault();
               alert(
-                'Thank you for reaching out! This is a demo form submission alert.'
+                "Thank you for reaching out! This is a demo form submission alert."
               );
             }}
           >
@@ -93,7 +101,7 @@ const Contact = () => {
               className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
               required
             />
-            
+
             <input
               type="email"
               placeholder="Your Email"

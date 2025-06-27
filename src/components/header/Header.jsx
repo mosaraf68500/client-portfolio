@@ -95,9 +95,9 @@ const Header = () => {
         <div className="navbar-end w-fit">
           {/* Desktop: Button | Mobile: Icon */}
           <a
-            href="/resume.pdf"
+            href="cv/belal-hossen-cv.pdf"
             download
-            className="btn btn-success rounded-full hidden md:inline-flex"
+            className="btn btn-primary rounded-full hidden md:inline-flex"
           >
             Resume
           </a>

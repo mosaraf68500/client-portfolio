@@ -23,6 +23,7 @@ const About = () => {
             alt="About Belal"
             className="rounded-3xl w-full shadow-xl object-cover max-h-[500px] border-4 border-primary/20"
           />
+          
         </motion.div>
 
         {/* Text Content */}
@@ -51,7 +52,7 @@ const About = () => {
           <div className="flex flex-wrap gap-6 mb-8">
             <div className="flex flex-col items-start">
               <h3 className="text-4xl font-bold text-primary">
-                <CountUp end={30} duration={2} />+
+                <CountUp end={100} duration={2} />+
               </h3>
               <span className="text-sm text-gray-400">Projects Completed</span>
             </div>
@@ -71,7 +72,7 @@ const About = () => {
 
           {/* Download Button */}
           <a
-            href="/resume.pdf"
+            href="cv/belal-hossen-cv.pdf"
             download
             className="btn btn-primary rounded-full inline-flex items-center gap-2"
           >
