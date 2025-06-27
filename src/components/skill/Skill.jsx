@@ -62,7 +62,7 @@ const skills = [
   {
     name: 'Express.js',
     icon: <SiExpress />,
-    textColor: 'text-gray-700',
+    textColor: 'text-gray-400',
     bgColor: '#4b5563', // Darker gray
     level: 75,
   },
@@ -159,7 +159,7 @@ const Skill = () => {
     >
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-2">My Skills</h2>
-        <p className="text-lg text-gray-500">Tech Stack & Proficiencies</p>
+        <p className="text-lg text-gray-300">Tech Stack & Proficiencies</p>
       </div>
 
       <motion.div

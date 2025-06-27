@@ -38,7 +38,7 @@ const About = () => {
           <h4 className="text-xl font-semibold text-accent mb-6">
             Senior Full Stack Developer (Laravel & MERN)
           </h4>
-          <p className="text-base text-gray-500 leading-relaxed mb-6">
+          <p className="text-base text-gray-300 leading-relaxed mb-6">
             I'm a passionate web developer with over 3 years of professional
             experience building modern, scalable, and secure web apps using
             Laravel, Livewire, React, and Node.js. I specialize in REST APIs,
@@ -53,19 +53,19 @@ const About = () => {
               <h3 className="text-4xl font-bold text-primary">
                 <CountUp end={30} duration={2} />+
               </h3>
-              <span className="text-sm text-gray-600">Projects Completed</span>
+              <span className="text-sm text-gray-400">Projects Completed</span>
             </div>
             <div className="flex flex-col items-start">
               <h3 className="text-4xl font-bold text-primary">
                 <CountUp end={3} duration={2} />+
               </h3>
-              <span className="text-sm text-gray-600">Years Experience</span>
+              <span className="text-sm text-gray-400">Years Experience</span>
             </div>
             <div className="flex flex-col items-start">
               <h3 className="text-4xl font-bold text-primary">
                 <CountUp end={10} duration={2} />+
               </h3>
-              <span className="text-sm text-gray-600">Technologies Mastered</span>
+              <span className="text-sm text-gray-400">Technologies Mastered</span>
             </div>
           </div>
 

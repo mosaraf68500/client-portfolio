@@ -18,7 +18,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-extrabold mb-3">Contact Me</h2>
-          <p className="text-gray-500 max-w-lg mx-auto">
+          <p className="text-gray-300 max-w-lg mx-auto">
             I’m always open to new opportunities and collaborations. Feel free to
             reach out via the form or my contact details.
           </p>
@@ -93,9 +93,16 @@ const Contact = () => {
               className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
               required
             />
+            
             <input
               type="email"
               placeholder="Your Email"
+              className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Subject"
               className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
               required
             />

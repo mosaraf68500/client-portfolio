@@ -56,7 +56,7 @@ const Experience = () => {
           className="text-center mb-14"
         >
           <h2 className="text-4xl font-extrabold mb-2">Experience</h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="text-gray-300 max-w-xl mx-auto">
             My professional journey and the impactful projects I've contributed to.
           </p>
         </motion.div>
@@ -76,7 +76,7 @@ const Experience = () => {
               className="relative"
             >
               {/* Icon */}
-              <div className="absolute -left-9 top-2 w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg">
+              <div className="absolute -left-12 top-2 w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg">
                 <FaBriefcase className="text-white" />
               </div>
 
@@ -84,7 +84,7 @@ const Experience = () => {
               <h3 className="text-2xl font-bold text-primary">{exp.role}</h3>
               <h4 className="text-lg font-semibold mt-1">{exp.company}</h4>
               <p className="text-sm text-gray-400 italic">{exp.period}</p>
-              <p className="mt-3 text-gray-700 leading-relaxed whitespace-pre-line">{exp.desc}</p>
+              <p className="mt-3 text-gray-400 leading-relaxed whitespace-pre-line">{exp.desc}</p>
             </motion.div>
           ))}
         </motion.div>

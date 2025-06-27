@@ -1,31 +1,52 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
-import { motion } from 'framer-motion';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const testimonials = [
   {
-    name: 'John Doe',
-    role: 'CEO at StartupX',
-    image: 'https://randomuser.me/api/portraits/men/32.jpg',
+    name: "John Doe",
+    role: "CEO at StartupX",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
     quote:
-      'Belal is an exceptional developer. He delivered our platform ahead of time with high quality and responsiveness.',
+      "Belal is an exceptional developer. He delivered our platform ahead of time with high quality and responsiveness.",
   },
   {
-    name: 'Jane Smith',
-    role: 'Product Designer',
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
+    name: "Jane Smith",
+    role: "Product Designer",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
     quote:
-      'His attention to detail and React expertise made our UI shine. Highly recommend working with him!',
+      "His attention to detail and React expertise made our UI shine. Highly recommend working with him!",
   },
   {
-    name: 'Michael Lee',
-    role: 'Tech Lead at DevHouse',
-    image: 'https://randomuser.me/api/portraits/men/75.jpg',
+    name: "Michael Lee",
+    role: "Tech Lead at DevHouse",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
     quote:
-      'Professional, fast, and reliable. Delivered a clean full-stack solution with Laravel backend.',
+      "Professional, fast, and reliable. Delivered a clean full-stack solution with Laravel backend.",
+  },
+  {
+    name: "Amina Rahman",
+    role: "Project Manager at Softexel",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    quote:
+      "Belal consistently delivers scalable and maintainable code. His expertise in Laravel and React makes him a key asset to our projects.",
+  },
+  {
+    name: "Rahim Khan",
+    role: "Founder at CodeCrafters",
+    image: "https://randomuser.me/api/portraits/men/85.jpg",
+    quote:
+      "Great communication and problem-solving skills. Belal integrated complex APIs flawlessly and optimized performance.",
+  },
+  {
+    name: "Sofia Ahmed",
+    role: "UI/UX Designer",
+    image: "https://randomuser.me/api/portraits/women/52.jpg",
+    quote:
+      "Collaborating with Belal was a pleasure. His frontend skills paired with backend knowledge helped us ship an impressive product.",
   },
 ];
 
@@ -64,8 +85,8 @@ const Testimonial = () => {
                   className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-4 border-primary"
                 />
                 <h4 className="text-xl font-semibold">{t.name}</h4>
-                <p className="text-sm text-gray-500">{t.role}</p>
-                <p className="mt-4 text-gray-700 italic">"{t.quote}"</p>
+                <p className="text-sm text-gray-300">{t.role}</p>
+                <p className="mt-4 text-gray-400 italic">"{t.quote}"</p>
               </motion.div>
             </SwiperSlide>
           ))}

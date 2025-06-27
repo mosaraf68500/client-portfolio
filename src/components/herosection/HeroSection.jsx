@@ -10,21 +10,35 @@ import 'swiper/css/autoplay';
 import banner1 from '../../assets/banner/banner-1.jpeg';
 import banner2 from '../../assets/banner/banner-2.jpeg';
 import banner3 from '../../assets/banner/banner-3.jpeg';
+import { Link as ScrollLink } from "react-scroll";
 
 const slides = [
   {
     image: banner1,
-    typeText: ['Full Stack Developer', 'React Developer', 'Laravel Expert'],
+    typeText: [
+      'Senior Laravel Developer',
+      'MERN Stack Specialist',
+      'API Integration Expert',
+    ],
   },
   {
     image: banner2,
-    typeText: ['Web Developer', 'UI/UX Enthusiast'],
+    typeText: [
+      'Full Stack Web Developer',
+      'React & Tailwind CSS Enthusiast',
+      'Clean & Scalable Code',
+    ],
   },
   {
     image: banner3,
-    typeText: ['Freelancer', 'Remote Worker'],
+    typeText: [
+      'Passionate Freelancer',
+      '3+ Years at Softexel',
+      'Delivering Quality Solutions',
+    ],
   },
 ];
+
 
 const HeroSection = () => {
   const prevRef = useRef(null);
@@ -75,7 +89,10 @@ const HeroSection = () => {
                   <span className="text-primary">React</span> &{' '}
                   <span className="text-accent">Laravel</span> Based Solutions
                 </p>
-                <button className="btn btn-primary rounded-full">About Me</button>
+                <ScrollLink  to="about"
+                  smooth={true}
+                  duration={500}
+                  offset={-80} className="btn btn-primary rounded-full">About Me</ScrollLink>
               </div>
             </div>
           </SwiperSlide>
