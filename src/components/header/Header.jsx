@@ -66,8 +66,7 @@ const Header = () => {
             to="/"
             className="text-xl font-extrabold tracking-wide flex items-center space-x-1"
           >
-            <span className="text-primary">Belal</span>
-            <span className="text-base-content">Hossen</span>
+            <img src="/logo.png" alt="Programmer belal logo" />
           </Link>
         </div>
 
