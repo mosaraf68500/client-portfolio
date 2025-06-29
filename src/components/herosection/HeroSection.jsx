@@ -86,7 +86,7 @@ const HeroSection = () => {
                   )}
                 </h1>
                 <p className="text-xl md:text-2xl font-medium mb-6">
-                  <span className="text-primary">React</span> &{' '}
+                  <span className="text-primary">MERN</span> &{' '}
                   <span className="text-accent">Laravel</span> Based Solutions
                 </p>
                 <ScrollLink  to="about"

@@ -6,19 +6,19 @@ const educationList = [
   {
     degree: 'MBA in Management',
     institution: 'NS College, Natore',
-    period: '2018 – 2022',
+    period: '2020 – 2021',
     desc: 'Focused on business strategy, organizational behavior, marketing, and management practices. Gained strong leadership and analytical skills applicable to tech project management.',
   },
   {
     degree: 'Honours in Management',
     institution: 'MK College, Natore',
-    period: '2016 – 2018',
+    period: '2015 – 2019',
     desc: 'Studied core areas of business including accounting, finance, and management principles. Built a solid foundation for understanding organizational operations.',
   },
   {
     degree: 'Higher Secondary School Certificate (HSC)',
     institution: 'Dattapara College',
-    period: '2014 – 2016',
+    period: '2013 – 2014',
     desc: 'Completed HSC with a focus on commerce subjects, including economics, business studies, and accounting.',
   },
 ];

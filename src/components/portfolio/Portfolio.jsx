@@ -1,7 +1,20 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEye } from "react-icons/fa";
+import {
+  FaEye,
+  FaTools,
+  FaGlobe,
+  FaCodeBranch,
+  FaTags,
+  FaAngleLeft,
+  FaAngleRight,
+  FaLock,
+} from "react-icons/fa";
 import Modal from "react-modal";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import Squares from "../../animation/Squares";
 
 Modal.setAppElement("#root");
@@ -9,93 +22,88 @@ Modal.setAppElement("#root");
 const allProjects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Web App",
+    title: "Kuhely.com",
+    thumbnail: "portfolio/kuhely.png",
+    slider: [
+      "portfolio/kuhely.png",
+      "portfolio/kuhely-2.png",
+      "portfolio/kuhely-3.png",
+    ],
+    category: "Multi-vendor Ecommerce",
     description:
-      "A full-featured e-commerce platform with payment integration and admin dashboard.",
-    technologies: ["React", "Laravel", "Stripe", "MySQL"],
-    liveLink: "https://ecommerce.example.com",
-    caseStudyLink: "https://ecommerce.example.com/case-study",
+      "Robust multi-vendor e-commerce platform with Pathao courier integration, Stripe payment, and full-featured admin dashboard.",
+    technologies: ["Livewire", "Laravel", "Stripe", "MySQL", "Pathao courier"],
+    liveLink: "https://kuhely.com",
+    repo_type: "private",
+    repo_link: null,
   },
   {
     id: 2,
-    title: "Portfolio Website",
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Web App",
+    title: "Mobiledokan",
+    thumbnail: "portfolio/mobiledokan.png",
+    slider: [
+      "portfolio/mobiledokan.png",
+      "portfolio/mobiledokan-2.png",
+      "portfolio/mobiledokan-3.png",
+      "portfolio/mobiledokan-4.png",
+    ],
+    category: "Tech Product Listing",
     description:
-      "Personal portfolio site with smooth animations and responsive design.",
-    technologies: ["React", "TailwindCSS", "Framer Motion"],
-    liveLink: "https://portfolio.example.com",
+      "Informative product listing platform for mobile, laptop, and tablet specs with dynamic UI and API-driven content.",
+    technologies: ["Livewire", "Laravel", "MySQL", "Laravel Passport"],
+    liveLink: "https://mobiledokan.com",
+    repo_type: "private",
+    repo_link: null,
   },
   {
     id: 3,
-    title: "Dashboard UI",
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "UI/UX",
-    description: "Clean and modern dashboard UI for analytics applications.",
-    technologies: ["React", "Chakra UI"],
+    title: "Xpfreelancer",
+    thumbnail: "portfolio/xpfreelancer.png",
+    slider: [
+      "portfolio/xpfreelancer.png",
+      "portfolio/xpfreelancer-2.png",
+      "portfolio/xpfreelancer-3.png",
+    ],
+    category: "Freelance Platform",
+    description:
+      "Modern freelance platform with user dashboards, project bidding, real-time messaging, and secure authentication.",
+    technologies: ["Livewire", "Laravel", "MySQL", "Laravel Passport"],
+    liveLink: "https://mobiledokan.com",
+    repo_type: "private",
+    repo_link: null,
   },
   {
     id: 4,
-    title: "Mobile App Design",
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Design",
+    title: "Ponnomela",
+    thumbnail: "portfolio/ponnomela.png",
+    slider: [
+      "portfolio/ponnomela.png",
+      "portfolio/ponnomela-2.png",
+      "portfolio/ponnomela-3.png",
+    ],
+    category: "Vendor Ecommerce",
     description:
-      "Conceptual mobile app design focused on user experience and interaction.",
-    technologies: ["Figma", "Adobe XD"],
-    caseStudyLink: "https://design.example.com/case-study",
+      "Multi-vendor store with Vue.js frontend powered by Inertia.js and Laravel backend. Admin panel included.",
+    technologies: ["Livewire", "Laravel", "Inertia", "Vue"],
+    liveLink: "https://ponnomela.shop",
+    repo_type: "private",
+    repo_link: null,
   },
   {
     id: 5,
-    title: "Blog CMS",
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Web App",
+    title: "Asklocal",
+    thumbnail: "portfolio/asklocal.png",
+    slider: ["portfolio/asklocal.png", "portfolio/asklocal-2.png"],
+    category: "Real Estate",
     description:
-      "Custom content management system for blogging with markdown support.",
-    technologies: ["Laravel", "Vue.js", "MySQL"],
+      "Real estate lead platform with integrated tools like Moxo and Mortgage Coach for user engagement.",
+    technologies: ["Livewire", "Laravel", "MySQL", "Moxo", "Mortgage Coach"],
+    liveLink: "https://asklocal.com",
+    repo_type: "private",
+    repo_link: null,
   },
-  {
-    id: 6,
-    title: "Marketing Website",
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Design",
-    description:
-      "Responsive marketing website designed to increase conversions.",
-    technologies: ["HTML5", "CSS3", "JavaScript"],
-    liveLink: "https://marketing.example.com",
-  },
-  {
-    id: 7,
-    title: "Admin Panel",
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "UI/UX",
-    description:
-      "User-friendly admin panel for managing app content and users.",
-    technologies: ["React", "Material UI"],
-  },
-  {
-    id: 8,
-    title: "Social Network App",
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Web App",
-    description:
-      "A social network with real-time chat and media sharing features.",
-    technologies: ["MERN Stack", "Socket.io"],
-    liveLink: "https://social.example.com",
-  },
-  // Add more projects here...
 ];
 
-// Extract unique categories from projects
 const categories = ["All", ...new Set(allProjects.map((p) => p.category))];
 
 const Portfolio = () => {
@@ -103,19 +111,15 @@ const Portfolio = () => {
   const [visibleCount, setVisibleCount] = useState(3);
   const [modalProject, setModalProject] = useState(null);
 
-  // Filter projects based on selected category
   const filteredProjects =
     selectedCategory === "All"
       ? allProjects
       : allProjects.filter((p) => p.category === selectedCategory);
 
-  // Show only visibleCount projects
   const visibleProjects = filteredProjects.slice(0, visibleCount);
 
-  // Handlers
   const openModal = (project) => setModalProject(project);
   const closeModal = () => setModalProject(null);
-
   const handleShowMore = () => {
     setVisibleCount((prev) => Math.min(prev + 3, filteredProjects.length));
   };
@@ -125,7 +129,6 @@ const Portfolio = () => {
       id="portfolio"
       className="py-20 bg-base-100 text-base-content relative overflow-hidden"
     >
-      {/* Background Animation - behind everything */}
       <div className="absolute inset-0 opacity-15">
         <Squares
           speed={0.5}
@@ -136,7 +139,6 @@ const Portfolio = () => {
         />
       </div>
 
-      {/* Foreground Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <motion.h2
           className="text-4xl font-bold text-center mb-10"
@@ -148,7 +150,6 @@ const Portfolio = () => {
           Portfolio
         </motion.h2>
 
-        {/* Category Filters */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">
           {categories.map((cat) => (
             <button
@@ -168,11 +169,10 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Project Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {visibleProjects.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={project.id + index}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: index * 0.15 }}
@@ -180,19 +180,18 @@ const Portfolio = () => {
               className="relative group rounded-xl overflow-hidden shadow-md cursor-pointer"
             >
               <img
-                src={project.image}
+                src={project.thumbnail}
                 alt={project.title}
                 className="w-full h-[230px] object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col items-center justify-center px-4">
-                <h3 className="text-white text-lg font-bold mb-3 text-center">
-                  {project.title}
-                </h3>
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col items-center justify-center px-4 text-white text-center">
+                <h3 className="text-lg font-bold mb-1">{project.title}</h3>
+                <p className="text-sm mb-3 flex items-center gap-1">
+                  <FaTags /> {project.category}
+                </p>
                 <button
                   onClick={() => openModal(project)}
-                  className="text-white bg-primary cursor-pointer rounded-full p-3 hover:bg-primary-dark transition"
-                  aria-label={`View details of ${project.title}`}
+                  className="bg-primary cursor-pointer rounded-full p-3 hover:bg-primary-dark transition"
                 >
                   <FaEye size={22} />
                 </button>
@@ -201,7 +200,6 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Show More Button */}
         {visibleCount < filteredProjects.length && (
           <div className="text-center mt-10">
             <button
@@ -213,34 +211,56 @@ const Portfolio = () => {
           </div>
         )}
 
-        {/* Modal */}
         <Modal
           isOpen={!!modalProject}
           onRequestClose={closeModal}
           contentLabel="Project Details"
           overlayClassName="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
-          className="bg-base-100 rounded-lg max-w-xl mx-4 p-6 relative shadow-xl max-h-[90vh] overflow-auto"
+          className="bg-base-100 rounded-lg max-w-3xl mx-4 p-6 relative shadow-xl max-h-[90vh] overflow-auto"
         >
           {modalProject && (
             <>
               <button
                 onClick={closeModal}
                 className="absolute top-4 right-4 text-gray-400 hover:text-gray-400 text-2xl font-bold"
-                aria-label="Close modal"
               >
                 &times;
               </button>
-              <h2 className="text-3xl font-bold mb-3">{modalProject.title}</h2>
-              <img
-                src={modalProject.image}
-                alt={modalProject.title}
-                className="w-full h-52 object-cover rounded mb-4"
-              />
+              <h2 className="text-3xl font-bold mb-4">{modalProject.title}</h2>
+
+              <Swiper
+                modules={[Navigation]}
+                navigation={{
+                  nextEl: ".swiper-cs-button-next",
+                  prevEl: ".swiper-cs-button-prev",
+                }}
+                className="mb-4"
+              >
+                {modalProject.slider.map((img, i) => (
+                  <SwiperSlide key={i}>
+                    <img
+                      src={img}
+                      alt={`${modalProject.title} screenshot ${i + 1}`}
+                      className="rounded w-full h-64 object-cover"
+                    />
+                  </SwiperSlide>
+                ))}
+
+                <div className="swiper-cs-button-prev !btn !btn-primary !btn-soft !btn-sm !rounded-full absolute top-1/2 -translate-y-1/2 left-2 z-10">
+                  <FaAngleLeft size={20} />
+                </div>
+                <div className="swiper-cs-button-next !btn !btn-primary !btn-soft !btn-sm !rounded-full absolute top-1/2 -translate-y-1/2 right-2 z-10">
+                  <FaAngleRight size={20} />
+                </div>
+              </Swiper>
+
               <p className="mb-4 text-gray-400 whitespace-pre-line">
                 {modalProject.description}
               </p>
               <div className="mb-4">
-                <h4 className="font-semibold mb-1">Technologies Used:</h4>
+                <h4 className="font-semibold mb-1 flex items-center gap-2">
+                  <FaTools /> Technologies Used:
+                </h4>
                 <ul className="list-disc list-inside flex flex-wrap gap-2 text-sm">
                   {modalProject.technologies.map((tech, idx) => (
                     <li
@@ -252,26 +272,32 @@ const Portfolio = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center flex-wrap">
                 {modalProject.liveLink && (
                   <a
                     href={modalProject.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-primary"
+                    className="btn btn-primary flex items-center gap-2"
                   >
-                    Live Site
+                    <FaGlobe /> Live Site
                   </a>
                 )}
-                {modalProject.caseStudyLink && (
-                  <a
-                    href={modalProject.caseStudyLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline btn-primary"
-                  >
-                    Case Study
-                  </a>
+                {modalProject.repo_type === "private" ? (
+                  <span className="btn btn-outline btn-primary flex items-center gap-2">
+                    <FaLock /> Private Repository
+                  </span>
+                ) : (
+                  modalProject.repo_link && (
+                    <a
+                      href={modalProject.repo_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline btn-primary flex items-center gap-2"
+                    >
+                      <FaCodeBranch /> Repository
+                    </a>
+                  )
                 )}
               </div>
             </>

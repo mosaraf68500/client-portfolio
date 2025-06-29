@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiMapPin, FiUser, FiSend } from "react-icons/fi";
 import Aurora from "../../animation/Aurora";
 
 const Contact = () => {
+  const [message,setMessage]=useState(null)
+  const handelSubmit=(e)=>{
+    e.preventDefault()
+    const form =e.target
+    form.reset();
+    setMessage('Your message sent successfully.Thanks for contact me.')
+  }
   return (
     <section
       id="contact"
@@ -17,7 +24,7 @@ const Contact = () => {
           speed={0.5}
         />
       </div>
-      <div className="max-w-6xl mx-auto px-6 z-10">
+      <div className="max-w-6xl mx-auto px-6 z-10 relative">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -56,7 +63,7 @@ const Contact = () => {
               {
                 icon: <FiMapPin className="text-primary text-3xl" />,
                 label: "Location",
-                value: "Dhaka, Bangladesh",
+                value: "Rajshahi, Bangladesh",
               },
               {
                 icon: <FiMail className="text-green-500 text-3xl rotate-45" />,
@@ -88,12 +95,7 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             className="space-y-8 bg-base-200 p-8 rounded-2xl shadow-lg"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert(
-                "Thank you for reaching out! This is a demo form submission alert."
-              );
-            }}
+            onSubmit={handelSubmit}
           >
             <input
               type="text"
@@ -119,6 +121,7 @@ const Contact = () => {
               className="textarea textarea-bordered w-full min-h-[140px] rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition resize-none"
               required
             ></textarea>
+            {message&& <p className="btn btn-success btn-soft w-full p-2 rounded-lg">{message}</p>}
             <button
               type="submit"
               className="btn btn-primary rounded-full w-full flex items-center justify-center gap-3 font-semibold text-lg hover:gap-5 transition-all duration-300"
