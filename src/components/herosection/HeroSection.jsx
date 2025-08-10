@@ -7,37 +7,38 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
-import banner1 from '../../assets/banner/banner-1.jpeg';
-import banner2 from '../../assets/banner/banner-2.jpeg';
-import banner3 from '../../assets/banner/banner-3.jpeg';
+import banner1 from './../../assets/banner/ChatGPT Image Aug 10, 2025, 10_08_21 PM.png';
+import banner2 from '../../assets/banner/converted.jpg';
+import banner3 from '../../assets/banner/sathi.jpg';
 import { Link as ScrollLink } from "react-scroll";
 
 const slides = [
   {
     image: banner1,
     typeText: [
-      'Senior Laravel Developer',
-      'MERN Stack Specialist',
-      'API Integration Expert',
+      'Aspiring MERN Stack Developer',
+      'Passionate About Learning',
+      'Focused on Real-World Projects',
     ],
   },
   {
     image: banner2,
     typeText: [
-      'Full Stack Web Developer',
-      'React & Tailwind CSS Enthusiast',
-      'Clean & Scalable Code',
+      'Front-End & Back-End Learner',
+      'Exploring React & Next.js',
+      'Building Skills Step by Step',
     ],
   },
   {
     image: banner3,
     typeText: [
-      'Passionate Freelancer',
-      '3+ Years at Softexel',
-      'Delivering Quality Solutions',
+      'Future Full Stack Developer',
+      'Creative Problem Solver',
+      'Committed to Continuous Growth',
     ],
   },
 ];
+
 
 
 const HeroSection = () => {
@@ -86,8 +87,7 @@ const HeroSection = () => {
                   )}
                 </h1>
                 <p className="text-xl md:text-2xl font-medium mb-6">
-                  <span className="text-primary">MERN</span> &{' '}
-                  <span className="text-accent">Laravel</span> Based Solutions
+                  <span className="text-primary">MERN</span> Based Solutions
                 </p>
                 <ScrollLink  to="about"
                   smooth={true}

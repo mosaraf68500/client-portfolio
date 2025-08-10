@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
 import { FaDownload } from 'react-icons/fa';
-import aboutImage from '../../assets/about/about.jpg';
+import aboutImage from '../../assets/about/mui.webp';
 
 const About = () => {
   return (
@@ -34,10 +34,10 @@ const About = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl font-extrabold mb-4">
-            👋 I'm <span className="text-primary">Belal Hossen</span>
+            👋 I'm <span className="text-primary">Md.Mosaraf Hossen</span>
           </h2>
           <h4 className="text-xl font-semibold text-accent mb-6">
-            Senior Full Stack Developer (Laravel & MERN)
+             Frontend Developer (MERN)
           </h4>
           <p className="text-base text-gray-300 leading-relaxed mb-6">
             I'm a passionate web developer with over 3 years of professional
