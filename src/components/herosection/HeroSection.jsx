@@ -73,7 +73,7 @@ const HeroSection = () => {
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="absolute inset-0 bg-black/30 flex flex-col justify-center items-center text-center px-6 md:px-16 text-white">
-                <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+                <h1 className="text-3xl md:text-4xl font-extrabold mb-4">
                   {activeIndex === index && (
                     <Typewriter
                       words={slide.typeText}
