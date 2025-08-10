@@ -7,46 +7,25 @@ import "swiper/css/pagination";
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "CEO at StartupX",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Md. Mosaraf Hossen",
+    role: "Programming Teacher & Developer",
+    image: "https://i.ibb.co.com/Hf7vW5md/sathi.jpg",
     quote:
-      "Belal is an exceptional developer. He delivered our platform ahead of time with high quality and responsiveness.",
+      "As a passionate programming teacher, I strive to create an engaging and supportive environment that helps students unlock their full potential and build real-world skills.",
   },
   {
-    name: "Jane Smith",
-    role: "Product Designer",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Md. Mosaraf Hossen",
+    role: "Volunteer & Community Organizer",
+    image: "https://i.ibb.co.com/tThYVPV2/callgirl.png",
     quote:
-      "His attention to detail and React expertise made our UI shine. Highly recommend working with him!",
+      "I lead volunteer initiatives focused on education and healthcare, working tirelessly to make a positive impact in our local community through meaningful outreach programs.",
   },
   {
-    name: "Michael Lee",
-    role: "Tech Lead at DevHouse",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    name: "Md. Mosaraf Hossen",
+    role: "Freelance Developer",
+    image: "https://randomuser.me/api/portraits/men/99.jpg",
     quote:
-      "Professional, fast, and reliable. Delivered a clean full-stack solution with Laravel backend.",
-  },
-  {
-    name: "Amina Rahman",
-    role: "Project Manager at Softexel",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
-    quote:
-      "Belal consistently delivers scalable and maintainable code. His expertise in Laravel and React makes him a key asset to our projects.",
-  },
-  {
-    name: "Rahim Khan",
-    role: "Founder at CodeCrafters",
-    image: "https://randomuser.me/api/portraits/men/85.jpg",
-    quote:
-      "Great communication and problem-solving skills. Belal integrated complex APIs flawlessly and optimized performance.",
-  },
-  {
-    name: "Sofia Ahmed",
-    role: "UI/UX Designer",
-    image: "https://randomuser.me/api/portraits/women/52.jpg",
-    quote:
-      "Collaborating with Belal was a pleasure. His frontend skills paired with backend knowledge helped us ship an impressive product.",
+      "Delivering clean, scalable code and efficient solutions is my priority. I enjoy collaborating with clients to transform ideas into functional and user-friendly applications.",
   },
 ];
 
@@ -68,7 +47,7 @@ const Testimonial = () => {
           modules={[Pagination, Autoplay]}
           autoplay={{ delay: 4000 }}
           pagination={{ clickable: true }}
-          loop
+          loop={testimonials.length > 1}
         >
           {testimonials.map((t, index) => (
             <SwiperSlide key={index}>

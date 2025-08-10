@@ -4,27 +4,27 @@ import { FaBriefcase } from 'react-icons/fa';
 
 const experiences = [
   {
-    role: 'Senior Laravel & MERN Developer',
-    company: 'Softexel',
-    period: 'Jun 2020 – Present',
-    desc: `Over 3 years of dedicated work at Softexel, leading backend and frontend development.
-    Developed robust Laravel applications and MERN stack projects with scalable architecture.
-    Integrated multiple third-party APIs, payment gateways, and optimized performance.`,
+    role: 'Volunteer',
+    company: 'Manush Manusher Jonno Foundation, Barishal Division',
+    period: 'Present',
+    desc: `Led and coordinated a team of volunteers for various community service initiatives.
+Organized and executed events such as food drives and medical camps.
+Contributed to local outreach programs focused on education, healthcare, and poverty alleviation.`,
   },
   {
-    role: 'Full Stack Developer (MERN)',
-    company: 'Freelance & Projects',
-    period: 'Jun 2019 – May 2020',
-    desc: `1 year of hands-on MERN stack experience building dynamic, responsive web apps.
-    Focused on React frontend, Node.js/Express backend, and MongoDB databases.`,
+    role: 'Campus Hero',
+    company: 'Programming Hero, University of Barishal',
+    period: 'During University',
+    desc: `Represented Programming Hero as a Campus Hero at the University of Barishal.
+Promoted programming learning and engaged fellow students in coding activities and community events.
+Assisted in organizing workshops and coding challenges to encourage peer learning and foster collaboration.`,
   },
   {
-    role: 'Laravel Developer',
-    company: 'Various Clients',
-    period: 'Jun 2017 – May 2020',
-    desc: `3 years of Laravel development experience prior to Softexel.
-    Built e-commerce, booking, and SaaS platforms.
-    Specialized in RESTful APIs, Livewire components, and database design.`,
+    role: 'Programming Teacher',
+    company: 'Freelance / Various Institutions',
+    period: 'Ongoing',
+    desc: `Teaching programming to students, guiding them to learn coding concepts and practical development.
+Focused on creating an interactive and supportive learning environment.`,
   },
 ];
 
