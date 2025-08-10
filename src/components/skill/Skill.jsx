@@ -2,14 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   FaReact,
-  FaLaravel,
   FaNodeJs,
   FaCss3Alt,
   FaJs,
   FaPhp,
   FaHtml5,
   FaGitAlt,
-  FaVuejs,
+  FaGithub,
+  FaJava,
+  FaWindows,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -18,149 +19,66 @@ import {
   SiRedux,
   SiNextdotjs,
   SiExpress,
-  SiLivewire,
-  SiAlpinedotjs,
-  SiNuxtdotjs,
+  SiC,
+  SiCplusplus,
+  SiBootstrap,
+  SiMui,
+  SiFirebase,
+  SiJsonwebtokens,
+  SiFigma,
+  SiNetlify,
+  SiMongoose,
+  SiVercel,
 } from "react-icons/si";
 import Particles from "../../animation/Particles";
 
 const skills = [
-  {
-    name: "React",
-    icon: <FaReact />,
-    textColor: "text-sky-500",
-    bgColor: "#0369a1",
-    lightBgColor: "#0369a11a", // 10% opacity (1a = 10% alpha)
-    level: 90,
-  },
-  {
-    name: "Laravel",
-    icon: <FaLaravel />,
-    textColor: "text-red-500",
-    bgColor: "#991b1b",
-    lightBgColor: "#991b1b1a",
-    level: 90,
-  },
-  {
-    name: "Livewire",
-    icon: <SiLivewire />,
-    textColor: "text-pink-500",
-    bgColor: "#9d174d",
-    lightBgColor: "#9d174d1a",
-    level: 85,
-  },
-  {
-    name: "Alpine.js",
-    icon: <SiAlpinedotjs />,
-    textColor: "text-green-700",
-    bgColor: "#166534",
-    lightBgColor: "#1665341a",
-    level: 80,
-  },
-  {
-    name: "Node.js",
-    icon: <FaNodeJs />,
-    textColor: "text-green-600",
-    bgColor: "#166534",
-    lightBgColor: "#1665341a",
-    level: 80,
-  },
-  {
-    name: "Express.js",
-    icon: <SiExpress />,
-    textColor: "text-gray-400",
-    bgColor: "#4b5563",
-    lightBgColor: "#4b55631a",
-    level: 75,
-  },
-  {
-    name: "MongoDB",
-    icon: <SiMongodb />,
-    textColor: "text-green-500",
-    bgColor: "#166534",
-    lightBgColor: "#1665341a",
-    level: 75,
-  },
-  {
-    name: "MySQL",
-    icon: <SiMysql />,
-    textColor: "text-blue-700",
-    bgColor: "#1e40af",
-    lightBgColor: "#1e40af1a",
-    level: 70,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: <SiTailwindcss />,
-    textColor: "text-cyan-400",
-    bgColor: "#0e7490",
-    lightBgColor: "#0e74901a",
-    level: 95,
-  },
-  {
-    name: "JavaScript",
-    icon: <FaJs />,
-    textColor: "text-yellow-400",
-    bgColor: "#854d0e",
-    lightBgColor: "#854d0e1a",
-    level: 90,
-  },
-  {
-    name: "PHP",
-    icon: <FaPhp />,
-    textColor: "text-indigo-600",
-    bgColor: "#3730a3",
-    lightBgColor: "#3730a31a",
-    level: 85,
-  },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs />,
-    textColor: "text-black",
-    bgColor: "#3f3f46",
-    lightBgColor: "#3f3f461a",
-    level: 70,
-  },
-  {
-    name: "Redux",
-    icon: <SiRedux />,
-    textColor: "text-purple-500",
-    bgColor: "#5b21b6",
-    lightBgColor: "#5b21b61a",
-    level: 70,
-  },
-  {
-    name: "Git",
-    icon: <FaGitAlt />,
-    textColor: "text-orange-600",
-    bgColor: "#9a3412",
-    lightBgColor: "#9a34121a",
-    level: 80,
-  },
-  {
-    name: "Vue.js",
-    icon: <FaVuejs />,
-    textColor: "text-green-500",
-    bgColor: "#166534",
-    lightBgColor: "#1665341a",
-    level: 80,
-  },
-  {
-    name: "Nuxt.js",
-    icon: <SiNuxtdotjs />,
-    textColor: "text-green-700",
-    bgColor: "#166534",
-    lightBgColor: "#1665341a",
-    level: 70,
-  },
+  // Operating System
+  // { name: "Windows", icon: <FaWindows />, textColor: "text-blue-500", bgColor: "#1e3a8a", lightBgColor: "#1e3a8a1a", level: 95 },
+
+  // Programming Languages
+  { name: "C", icon: <SiC />, textColor: "text-blue-600", bgColor: "#1e3a8a", lightBgColor: "#1e3a8a1a", level: 60 },
+  { name: "C++", icon: <SiCplusplus />, textColor: "text-blue-500", bgColor: "#1e40af", lightBgColor: "#1e40af1a", level: 55 },
+  { name: "JavaScript", icon: <FaJs />, textColor: "text-yellow-400", bgColor: "#854d0e", lightBgColor: "#854d0e1a", level: 90 },
+  { name: "Java (Basic)", icon: <FaJava />, textColor: "text-red-500", bgColor: "#991b1b", lightBgColor: "#991b1b1a", level: 40 },
+  { name: "PHP (Basic)", icon: <FaPhp />, textColor: "text-indigo-600", bgColor: "#3730a3", lightBgColor: "#3730a31a", level: 60 },
+
+  // Backend
+  { name: "Node.js", icon: <FaNodeJs />, textColor: "text-green-600", bgColor: "#166534", lightBgColor: "#1665341a", level: 65 },
+  { name: "Express.js", icon: <SiExpress />, textColor: "text-gray-400", bgColor: "#4b5563", lightBgColor: "#4b55631a", level: 75 },
+  { name: "Mongoose", icon: <SiMongoose />, textColor: "text-red-600", bgColor: "#991b1b", lightBgColor: "#991b1b1a", level: 70 },
+  { name: "MySQL", icon: <SiMysql />, textColor: "text-blue-700", bgColor: "#1e40af", lightBgColor: "#1e40af1a", level: 70 },
+  { name: "MongoDB", icon: <SiMongodb />, textColor: "text-green-500", bgColor: "#166534", lightBgColor: "#1665341a", level: 70 },
+
+  // Frontend
+  { name: "ReactJS", icon: <FaReact />, textColor: "text-sky-500", bgColor: "#0369a1", lightBgColor: "#0369a11a", level: 80 },
+
+  // Design / Styling
+  { name: "HTML", icon: <FaHtml5 />, textColor: "text-orange-500", bgColor: "#9a3412", lightBgColor: "#9a34121a", level: 95 },
+  { name: "CSS", icon: <FaCss3Alt />, textColor: "text-blue-500", bgColor: "#1e3a8a", lightBgColor: "#1e3a8a1a", level: 90 },
+  { name: "Bootstrap", icon: <SiBootstrap />, textColor: "text-purple-500", bgColor: "#5b21b6", lightBgColor: "#5b21b61a", level: 85 },
+  { name: "Tailwind CSS", icon: <SiTailwindcss />, textColor: "text-cyan-400", bgColor: "#0e7490", lightBgColor: "#0e74901a", level: 95 },
+  { name: "Material UI", icon: <SiMui />, textColor: "text-blue-500", bgColor: "#1e40af", lightBgColor: "#1e40af1a", level: 85 },
+
+  // Version Control
+  { name: "Git", icon: <FaGitAlt />, textColor: "text-orange-600", bgColor: "#9a3412", lightBgColor: "#9a34121a", level: 90 },
+  { name: "GitHub", icon: <FaGithub />, textColor: "text-gray-800", bgColor: "#3f3f46", lightBgColor: "#3f3f461a", level: 85 },
+
+  // Authentication
+  { name: "Firebase", icon: <SiFirebase />, textColor: "text-yellow-500", bgColor: "#854d0e", lightBgColor: "#854d0e1a", level: 95 },
+  { name: "JWT", icon: <SiJsonwebtokens />, textColor: "text-red-500", bgColor: "#991b1b", lightBgColor: "#991b1b1a", level: 70 },
+
+  // Tools
+  { name: "Figma", icon: <SiFigma />, textColor: "text-pink-500", bgColor: "#9d174d", lightBgColor: "#9d174d1a", level: 70 },
+  { name: "Pixso", icon: <SiFigma />, textColor: "text-green-500", bgColor: "#166534", lightBgColor: "#1665341a", level: 65 },
+  { name: "Vercel", icon: <SiVercel />, textColor: "text-black", bgColor: "#3f3f46", lightBgColor: "#3f3f461a", level: 85 },
+  { name: "Netlify", icon: <SiNetlify />, textColor: "text-cyan-500", bgColor: "#0e7490", lightBgColor: "#0e74901a", level: 80 },
 ];
 
 const container = {
   hidden: {},
   show: {
-    transition: {
-      staggerChildren: 0.12,
-    },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
@@ -173,10 +91,10 @@ const Skill = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen py-20 bg-base-100 text-base-content relative overflow-hidden"
+      className="   bg-base-100 text-base-content relative overflow-hidden"
     >
       {/* Background Layer */}
-      <div className="absolute inset-0 ">
+      <div className="absolute inset-0  border">
         <Particles
           particleColors={["#ffffff", "#ffffff"]}
           particleCount={200}
@@ -200,7 +118,7 @@ const Skill = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 px-6 max-w-6xl mx-auto relative z-10"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 px-6  relative z-10"
       >
         {skills.map((skill, index) => (
           <motion.div

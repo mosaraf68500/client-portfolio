@@ -4,25 +4,24 @@ import { FaGraduationCap } from 'react-icons/fa';
 
 const educationList = [
   {
-    degree: 'MBA in Management',
-    institution: 'NS College, Natore',
-    period: '2020 – 2021',
-    desc: 'Focused on business strategy, organizational behavior, marketing, and management practices. Gained strong leadership and analytical skills applicable to tech project management.',
+    degree: 'Bachelor of Science (B.Sc. Honours) in Computer Science and Engineering',
+    institution: 'University of Barishal',
+    period: 'Jun. 2022 – Present',
+    desc: 'Current CGPA: 3.37. Studying computer science with focus on programming, algorithms, and software development.',
   },
   {
-    degree: 'Honours in Management',
-    institution: 'MK College, Natore',
-    period: '2015 – 2019',
-    desc: 'Studied core areas of business including accounting, finance, and management principles. Built a solid foundation for understanding organizational operations.',
+    degree: 'Higher Secondary Certificate (HSC), Science',
+    institution: 'Bhurungamari Govt College, Bhurungamari',
+    period: 'Passing Year: 2020',
+    desc: 'Achieved GPA: 5.00 out of 5. Focused on science subjects with strong academic performance.',
   },
   {
-    degree: 'Higher Secondary School Certificate (HSC)',
-    institution: 'Dattapara College',
-    period: '2013 – 2014',
-    desc: 'Completed HSC with a focus on commerce subjects, including economics, business studies, and accounting.',
+    degree: 'Dakhil (Secondary Equivalent), Science',
+    institution: 'Beldha Alim Madrasha, Bhurungamari',
+    period: 'Passing Year: 2018',
+    desc: 'Achieved GPA: 5.00 out of 5.',
   },
 ];
-
 
 const Education = () => {
   return (
