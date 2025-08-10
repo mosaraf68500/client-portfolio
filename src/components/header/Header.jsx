@@ -3,6 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router";
 import { FaDownload } from "react-icons/fa";
 import "./header.css";
+import logo from "./../../assets/about/logo.png"
 
 const navItems = [
   { path: "about", label: "About" },
@@ -64,9 +65,9 @@ const Header = () => {
           </div>
           <Link
             to="/"
-            className="text-xl font-extrabold tracking-wide flex items-center space-x-1"
+            className="text-xl  font-extrabold tracking-wide flex items-center space-x-1"
           >
-            <img src="/logo.png" alt="Programmer belal logo" />
+            <img className="w-[150px] rounded-2xl " src={logo} alt="Developer Mosaraf logo" />
           </Link>
         </div>
 
@@ -94,14 +95,14 @@ const Header = () => {
         <div className="navbar-end w-fit">
           {/* Desktop: Button | Mobile: Icon */}
           <a
-            href="cv/belal-hossen-cv.pdf"
+            href="cv/mosaraf_resume (1).pdf"
             download
             className="btn btn-primary rounded-full hidden md:inline-flex"
           >
             Resume
           </a>
           <a
-            href="/resume.pdf"
+            href="cv/mosaraf_resume (1).pdf"
             download
             className="btn btn-ghost text-lg text-success md:hidden"
           >
