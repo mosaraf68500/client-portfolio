@@ -94,7 +94,7 @@ const Skill = () => {
       className="   bg-base-100 text-base-content relative overflow-hidden"
     >
       {/* Background Layer */}
-      <div className="absolute inset-0  border">
+      <div className="absolute inset-0  ">
         <Particles
           particleColors={["#ffffff", "#ffffff"]}
           particleCount={200}
