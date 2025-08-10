@@ -5,22 +5,22 @@ const SocialSidebar = () => {
   const socials = [
     {
       icon: <FaGithub />,
-      link: 'https://github.com/web-developer-belal',
+      link: 'https://github.com/mosaraf68500',
       bg: 'bg-gray-800/30 text-white hover:bg-gray-700',
     },
     {
       icon: <FaFacebookF />,
-      link: 'https://facebook.com/belal.hossen.freelancer',
+      link: 'https://www.facebook.com/mosaraf.hossion.94',
       bg: 'bg-blue-600/30 text-white hover:bg-blue-500',
     },
     {
       icon: <FaWhatsapp />,
-      link: 'https://wa.me/8801752751232',
+      link: 'https://wa.me/8801783176838',
       bg: 'bg-green-500/30 text-white hover:bg-green-400',
     },
     {
       icon: <FaPhone />,
-      link: 'tel:+8801752751232',
+      link: 'tel:+8801783176838',
       bg: 'bg-rose-500/30 text-white hover:bg-rose-400',
     },
   ];
