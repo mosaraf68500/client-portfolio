@@ -53,23 +53,23 @@ const Contact = () => {
               {
                 icon: <FiUser className="text-primary text-3xl" />,
                 label: "Name",
-                value: "Belal Hossen",
+                value: "Mosaraf Hossen",
               },
               {
                 icon: <FiMail className="text-primary text-3xl" />,
                 label: "Email",
-                value: "programmer.m.belal@gmail.com",
+                value: "mosaraf.cse8.bu@gmail.com",
               },
               {
                 icon: <FiMapPin className="text-primary text-3xl" />,
                 label: "Location",
-                value: "Rajshahi, Bangladesh",
+                value: "Barishal, Bangladesh",
               },
               {
                 icon: <FiMail className="text-green-500 text-3xl rotate-45" />,
                 label: "WhatsApp",
-                value: "+8801752751232",
-                link: "https://wa.me/8801752751232",
+                value: "+8801783176838",
+                link: "https://wa.me/8801783176838",
               },
             ].map(({ icon, label, value, link }, idx) => (
               <div
