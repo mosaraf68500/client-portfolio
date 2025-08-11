@@ -22,86 +22,163 @@ Modal.setAppElement("#root");
 const allProjects = [
   {
     id: 1,
-    title: "Kuhely.com",
-    thumbnail: "portfolio/kuhely.png",
-    slider: [
-      "portfolio/kuhely.png",
-      "portfolio/kuhely-2.png",
-      "portfolio/kuhely-3.png",
-    ],
-    category: "Multi-vendor Ecommerce",
+    title: "EduConnect",
+    thumbnail: "allProjectImage/Educonnect.png",
+    slider: ["allProjectImage/Educonnect.png"],
+    category: "Online Tutor Booking Platform",
     description:
-      "Robust multi-vendor e-commerce platform with Pathao courier integration, Stripe payment, and full-featured admin dashboard.",
-    technologies: ["Livewire", "Laravel", "Stripe", "MySQL", "Pathao courier"],
-    liveLink: "https://kuhely.com",
+      "EduConnect is a comprehensive online tutor booking platform that connects language learners with qualified tutors worldwide. Features include secure authentication, category-based tutor search, real-time statistics, booking system, tutorial management, review system, and responsive UI/UX with dark/light mode support.",
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "Shadcn/UI",
+      "DaisyUI",
+      "MambaUI",
+      "React Router",
+      "React Hook Form",
+      "React Query",
+      "Framer Motion",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase Auth",
+      "JWT",
+    ],
+    liveLink: "https://educonnect-9e2c7.web.app/",
     repo_type: "private",
     repo_link: null,
   },
   {
     id: 2,
-    title: "Mobiledokan",
-    thumbnail: "portfolio/mobiledokan.png",
+    title: "ScholarBridge",
+    thumbnail: "allProjectImage/scholarship1.png",
     slider: [
-      "portfolio/mobiledokan.png",
-      "portfolio/mobiledokan-2.png",
-      "portfolio/mobiledokan-3.png",
-      "portfolio/mobiledokan-4.png",
+      "allProjectImage/scholarship1.png",
+      "portfolio/scholarbridge-2.png",
+      "portfolio/scholarbridge-3.png",
+      "portfolio/scholarbridge-4.png",
     ],
-    category: "Tech Product Listing",
+    category: "Scholarship Management System",
     description:
-      "Informative product listing platform for mobile, laptop, and tablet specs with dynamic UI and API-driven content.",
-    technologies: ["Livewire", "Laravel", "MySQL", "Laravel Passport"],
-    liveLink: "https://mobiledokan.com",
+      "A comprehensive scholarship management platform connecting students with global opportunities. Features include advanced scholarship search, filtering, application management, review system, secure payments, and role-based access for students, moderators, and administrators.",
+    technologies: [
+      "React.js 14",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "TanStack Query",
+      "Lucide React",
+      "Firebase Authentication",
+      "MongoDB",
+      "Node.js",
+      "Express.js",
+      "Vercel",
+      "Stripe",
+      "React Hook Form",
+      "Zod",
+      "Date-fns",
+      "React Hot Toast",
+    ],
+    liveLink: "https://assignment-12-7e17d.web.app/",
     repo_type: "private",
     repo_link: null,
+    demoAccounts: {
+      admin: {
+        email: "mosaraf.bu@gmail.com",
+        password: "123456789",
+      },
+      moderator: {
+        email: "mosa@rof.com",
+        password: "123456789",
+      },
+    },
   },
   {
-    id: 3,
-    title: "Xpfreelancer",
-    thumbnail: "portfolio/xpfreelancer.png",
-    slider: [
-      "portfolio/xpfreelancer.png",
-      "portfolio/xpfreelancer-2.png",
-      "portfolio/xpfreelancer-3.png",
-    ],
-    category: "Freelance Platform",
-    description:
-      "Modern freelance platform with user dashboards, project bidding, real-time messaging, and secure authentication.",
-    technologies: ["Livewire", "Laravel", "MySQL", "Laravel Passport"],
-    liveLink: "https://mobiledokan.com",
-    repo_type: "private",
-    repo_link: null,
-  },
-  {
-    id: 4,
-    title: "Ponnomela",
-    thumbnail: "portfolio/ponnomela.png",
-    slider: [
-      "portfolio/ponnomela.png",
-      "portfolio/ponnomela-2.png",
-      "portfolio/ponnomela-3.png",
-    ],
-    category: "Vendor Ecommerce",
-    description:
-      "Multi-vendor store with Vue.js frontend powered by Inertia.js and Laravel backend. Admin panel included.",
-    technologies: ["Livewire", "Laravel", "Inertia", "Vue"],
-    liveLink: "https://ponnomela.shop",
-    repo_type: "private",
-    repo_link: null,
-  },
-  {
-    id: 5,
-    title: "Asklocal",
-    thumbnail: "portfolio/asklocal.png",
-    slider: ["portfolio/asklocal.png", "portfolio/asklocal-2.png"],
-    category: "Real Estate",
-    description:
-      "Real estate lead platform with integrated tools like Moxo and Mortgage Coach for user engagement.",
-    technologies: ["Livewire", "Laravel", "MySQL", "Moxo", "Mortgage Coach"],
-    liveLink: "https://asklocal.com",
-    repo_type: "private",
-    repo_link: null,
-  },
+  id: 3,
+  title: "Recipe Book App",
+  thumbnail: "allProjectImage/recipe1.png",
+  slider: [
+    "portfolio/recipe-book-1.png",
+    "portfolio/recipe-book-2.png",
+    "portfolio/recipe-book-3.png",
+    "portfolio/recipe-book-4.png"
+  ],
+  category: "Recipe Sharing Platform",
+  description:
+    "A platform for food enthusiasts to share and discover recipes from around the world. Features include secure authentication, recipe management, discovery by cuisine type, like system for popular dishes, responsive design, and dark/light mode toggle for a personalized viewing experience.",
+  technologies: [
+    "React.js",
+    "Mamba UI",
+    "Tailwind CSS",
+    "DaisyUI",
+    "shadcn/ui",
+    "Firebase Authentication",
+    "React Simple Typewriter",
+    "React Awesome Reveal",
+    "RESTful API",
+    "Fetch API",
+    "CRUD Operations"
+  ],
+  liveLink: "https://assignment-10-cbed7.web.app/",
+  repo_type: "private",
+  repo_link: null
+},
+{
+  id: 4,
+  title: "Event Explorer",
+  thumbnail: "allProjectImage/event1.png",
+  slider: [
+    "portfolio/event-explorer-1.png",
+    "portfolio/event-explorer-2.png",
+    "portfolio/event-explorer-3.png",
+    "portfolio/event-explorer-4.png"
+  ],
+  category: "Event Explorer Platform",
+  description:
+    "Event Explorer is a platform that enables users to discover, explore, and get details about upcoming local events such as conferences, workshops, sports events, art exhibitions, and more. Features include user authentication, event browsing, category filtering, seat reservation, user profiles, community interaction, and password reset functionality, all within a fully responsive design.",
+  technologies: [
+    "React.js 14",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Firebase Authentication",
+    "Firebase Firestore",
+    "Swiper",
+    "AOS (Animate On Scroll)"
+  ],
+  liveLink: "https://merry-choux-87146b.netlify.app/",
+  repo_type: "private",
+  repo_link: null
+},{
+  id: 5,
+  title: "Peddy Adoption",
+  thumbnail: "allProjectImage/paddy1.png",
+  slider: [
+    "portfolio/peddy-adoption-1.png",
+    "portfolio/peddy-adoption-2.png",
+    "portfolio/peddy-adoption-3.png",
+    "portfolio/peddy-adoption-4.png"
+  ],
+  category: "Pet Adoption Platform",
+  description:
+    "Peddy Adoption is a responsive platform built with REST API integration that allows users to browse, search, and adopt pets. Features include dynamic category filtering, sorting by price, detailed pet info modals, an adoption process, and disabling the adopt button after adoption to prevent duplicates.",
+  technologies: [
+    "React.js",
+    "Tailwind CSS",
+    "React Router",
+    "React Hook Form",
+    "Framer Motion",
+    "Firebase Authentication",
+    "MongoDB",
+    "Express.js",
+    "Node.js",
+    "RESTful API"
+  ],
+  liveLink: "https://frolicking-gelato-a9235e.netlify.app/",
+  repo_type: "private",
+  repo_link: null
+}
+
+
+
 ];
 
 const categories = ["All", ...new Set(allProjects.map((p) => p.category))];
@@ -150,6 +227,7 @@ const Portfolio = () => {
           Portfolio
         </motion.h2>
 
+        {/* Category Buttons */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">
           {categories.map((cat) => (
             <button
@@ -169,6 +247,7 @@ const Portfolio = () => {
           ))}
         </div>
 
+        {/* Project Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {visibleProjects.map((project, index) => (
             <motion.div
@@ -200,6 +279,7 @@ const Portfolio = () => {
           ))}
         </div>
 
+        {/* Show More */}
         {visibleCount < filteredProjects.length && (
           <div className="text-center mt-10">
             <button
@@ -211,6 +291,7 @@ const Portfolio = () => {
           </div>
         )}
 
+        {/* Modal */}
         <Modal
           isOpen={!!modalProject}
           onRequestClose={closeModal}
@@ -228,6 +309,7 @@ const Portfolio = () => {
               </button>
               <h2 className="text-3xl font-bold mb-4">{modalProject.title}</h2>
 
+              {/* Image Slider */}
               <Swiper
                 modules={[Navigation]}
                 navigation={{
@@ -245,7 +327,6 @@ const Portfolio = () => {
                     />
                   </SwiperSlide>
                 ))}
-
                 <div className="swiper-cs-button-prev !btn !btn-primary !btn-soft !btn-sm !rounded-full absolute top-1/2 -translate-y-1/2 left-2 z-10">
                   <FaAngleLeft size={20} />
                 </div>
@@ -254,9 +335,12 @@ const Portfolio = () => {
                 </div>
               </Swiper>
 
+              {/* Description */}
               <p className="mb-4 text-gray-400 whitespace-pre-line">
                 {modalProject.description}
               </p>
+
+              {/* Technologies */}
               <div className="mb-4">
                 <h4 className="font-semibold mb-1 flex items-center gap-2">
                   <FaTools /> Technologies Used:
@@ -272,7 +356,46 @@ const Portfolio = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex gap-4 items-center flex-wrap">
+
+              {/* Demo Accounts */}
+              {modalProject.demoAccounts && (
+                <div className="mt-6 w-full">
+                  <h4 className="font-semibold mb-3">Demo Login Accounts:</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {modalProject.demoAccounts.admin && (
+                      <div className="border rounded-lg p-4 bg-primary/10">
+                        <h5 className="font-bold text-primary mb-1">Admin</h5>
+                        <p className="text-sm">
+                          <strong>Email:</strong>{" "}
+                          {modalProject.demoAccounts.admin.email}
+                        </p>
+                        <p className="text-sm">
+                          <strong>Password:</strong>{" "}
+                          {modalProject.demoAccounts.admin.password}
+                        </p>
+                      </div>
+                    )}
+                    {modalProject.demoAccounts.moderator && (
+                      <div className="border rounded-lg p-4 bg-secondary/10">
+                        <h5 className="font-bold text-secondary mb-1">
+                          Moderator
+                        </h5>
+                        <p className="text-sm">
+                          <strong>Email:</strong>{" "}
+                          {modalProject.demoAccounts.moderator.email}
+                        </p>
+                        <p className="text-sm">
+                          <strong>Password:</strong>{" "}
+                          {modalProject.demoAccounts.moderator.password}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Links */}
+              <div className="flex gap-4 items-center flex-wrap mt-6">
                 {modalProject.liveLink && (
                   <a
                     href={modalProject.liveLink}

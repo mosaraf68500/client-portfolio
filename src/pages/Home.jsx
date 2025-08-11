@@ -8,6 +8,7 @@ import Portfolio from "../components/portfolio/Portfolio";
 import Testimonial from "../components/testimonial/Testimonial";
 import Contact from "../components/contact/Contact";
 import SocialSidebar from "../components/social/SocialSidebar";
+import AllProjects from "../components/AllProjects/AllProjects";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Education></Education>
       <Experience></Experience>
       <Portfolio></Portfolio>
+      {/* <AllProjects></AllProjects> */}
       <Testimonial></Testimonial>
       <Contact></Contact>
       <SocialSidebar></SocialSidebar>
