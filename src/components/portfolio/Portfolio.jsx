@@ -23,9 +23,12 @@ const allProjects = [
   {
     id: 1,
     title: "EduConnect",
-    thumbnail: "allProjectImage/Educonnect.png",
-    slider: ["allProjectImage/Educonnect.png"],
-    category: "Online Tutor Booking Platform",
+    thumbnail: "allProjectImage/Educonnect1.png",
+    slider: [
+      "allProjectImage/Educonnect1.png",
+      "allProjectImage/Educonnect.png",
+    ],
+    category: "Online Tutor Booking",
     description:
       "EduConnect is a comprehensive online tutor booking platform that connects language learners with qualified tutors worldwide. Features include secure authentication, category-based tutor search, real-time statistics, booking system, tutorial management, review system, and responsive UI/UX with dark/light mode support.",
     technologies: [
@@ -53,10 +56,9 @@ const allProjects = [
     title: "ScholarBridge",
     thumbnail: "allProjectImage/scholarship1.png",
     slider: [
-      "allProjectImage/scholarship1.png",
-      "portfolio/scholarbridge-2.png",
-      "portfolio/scholarbridge-3.png",
-      "portfolio/scholarbridge-4.png",
+     "allProjectImage/scholarship1.png",
+      "allProjectImage/scholarship2.png",
+      "allProjectImage/scholarship2.png",
     ],
     category: "Scholarship Management System",
     description:
@@ -93,92 +95,81 @@ const allProjects = [
     },
   },
   {
-  id: 3,
-  title: "Recipe Book App",
-  thumbnail: "allProjectImage/recipe1.png",
-  slider: [
-    "portfolio/recipe-book-1.png",
-    "portfolio/recipe-book-2.png",
-    "portfolio/recipe-book-3.png",
-    "portfolio/recipe-book-4.png"
-  ],
-  category: "Recipe Sharing Platform",
-  description:
-    "A platform for food enthusiasts to share and discover recipes from around the world. Features include secure authentication, recipe management, discovery by cuisine type, like system for popular dishes, responsive design, and dark/light mode toggle for a personalized viewing experience.",
-  technologies: [
-    "React.js",
-    "Mamba UI",
-    "Tailwind CSS",
-    "DaisyUI",
-    "shadcn/ui",
-    "Firebase Authentication",
-    "React Simple Typewriter",
-    "React Awesome Reveal",
-    "RESTful API",
-    "Fetch API",
-    "CRUD Operations"
-  ],
-  liveLink: "https://assignment-10-cbed7.web.app/",
-  repo_type: "private",
-  repo_link: null
-},
-{
-  id: 4,
-  title: "Event Explorer",
-  thumbnail: "allProjectImage/event1.png",
-  slider: [
-    "portfolio/event-explorer-1.png",
-    "portfolio/event-explorer-2.png",
-    "portfolio/event-explorer-3.png",
-    "portfolio/event-explorer-4.png"
-  ],
-  category: "Event Explorer Platform",
-  description:
-    "Event Explorer is a platform that enables users to discover, explore, and get details about upcoming local events such as conferences, workshops, sports events, art exhibitions, and more. Features include user authentication, event browsing, category filtering, seat reservation, user profiles, community interaction, and password reset functionality, all within a fully responsive design.",
-  technologies: [
-    "React.js 14",
-    "Tailwind CSS",
-    "shadcn/ui",
-    "Firebase Authentication",
-    "Firebase Firestore",
-    "Swiper",
-    "AOS (Animate On Scroll)"
-  ],
-  liveLink: "https://merry-choux-87146b.netlify.app/",
-  repo_type: "private",
-  repo_link: null
-},{
-  id: 5,
-  title: "Peddy Adoption",
-  thumbnail: "allProjectImage/paddy1.png",
-  slider: [
-    "portfolio/peddy-adoption-1.png",
-    "portfolio/peddy-adoption-2.png",
-    "portfolio/peddy-adoption-3.png",
-    "portfolio/peddy-adoption-4.png"
-  ],
-  category: "Pet Adoption Platform",
-  description:
-    "Peddy Adoption is a responsive platform built with REST API integration that allows users to browse, search, and adopt pets. Features include dynamic category filtering, sorting by price, detailed pet info modals, an adoption process, and disabling the adopt button after adoption to prevent duplicates.",
-  technologies: [
-    "React.js",
-    "Tailwind CSS",
-    "React Router",
-    "React Hook Form",
-    "Framer Motion",
-    "Firebase Authentication",
-    "MongoDB",
-    "Express.js",
-    "Node.js",
-    "RESTful API"
-  ],
-  liveLink: "https://frolicking-gelato-a9235e.netlify.app/",
-  repo_type: "private",
-  repo_link: null
-}
-
-
-
+    id: 3,
+    title: "Recipe Book App",
+    thumbnail: "allProjectImage/recipe1.png",
+    slider: [
+     "allProjectImage/recipe1.png",
+    ],
+    category: "Recipe Sharing ",
+    description:
+      "A platform for food enthusiasts to share and discover recipes from around the world. Features include secure authentication, recipe management, discovery by cuisine type, like system for popular dishes, responsive design, and dark/light mode toggle for a personalized viewing experience.",
+    technologies: [
+      "React.js",
+      "Mamba UI",
+      "Tailwind CSS",
+      "DaisyUI",
+      "shadcn/ui",
+      "Firebase Authentication",
+      "React Simple Typewriter",
+      "React Awesome Reveal",
+      "RESTful API",
+      "Fetch API",
+      "CRUD Operations",
+    ],
+    liveLink: "https://assignment-10-cbed7.web.app/",
+    repo_type: "private",
+    repo_link: null,
+  },
+  {
+    id: 4,
+    title: "Event Explorer",
+    thumbnail: "allProjectImage/event1.png",
+    slider: [
+      "allProjectImage/event1.png",
+    ],
+    category: "Event Explorer ",
+    description:
+      "Event Explorer is a platform that enables users to discover, explore, and get details about upcoming local events such as conferences, workshops, sports events, art exhibitions, and more. Features include user authentication, event browsing, category filtering, seat reservation, user profiles, community interaction, and password reset functionality, all within a fully responsive design.",
+    technologies: [
+      "React.js 14",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Firebase Authentication",
+      "Firebase Firestore",
+      "Swiper",
+      "AOS (Animate On Scroll)",
+    ],
+    liveLink: "https://merry-choux-87146b.netlify.app/",
+    repo_type: "private",
+    repo_link: null,
+  },
+  {
+    id: 5,
+    title: "Peddy Adoption",
+    thumbnail: "allProjectImage/paddy1.png",
+    slider: [
+      "allProjectImage/paddy1.png",
+    ],
+    category: "Pet Adoption ",
+    description:
+      "Peddy Adoption is a responsive platform built with REST API integration that allows users to browse, search, and adopt pets. Features include dynamic category filtering, sorting by price, detailed pet info modals, an adoption process, and disabling the adopt button after adoption to prevent duplicates.",
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "React Router",
+      "React Hook Form",
+      "Framer Motion",
+      "Firebase Authentication",
+      "MongoDB",
+      "Express.js",
+      "Node.js",
+      "RESTful API",
+    ],
+    liveLink: "https://frolicking-gelato-a9235e.netlify.app/",
+    repo_type: "private",
+    repo_link: null,
+  },
 ];
 
 const categories = ["All", ...new Set(allProjects.map((p) => p.category))];
