@@ -99,7 +99,7 @@ const Header = () => {
         <div className="navbar-end w-fit">
           {/* Desktop: Button | Mobile: Icon */}
           <a
-            href="cv/mosaraf_resume (1).pdf"
+            href="cv/mosaraf_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary rounded-full hidden md:inline-flex"
@@ -107,7 +107,7 @@ const Header = () => {
             See Resume
           </a>
           <a
-            href="cv/mosaraf_resume (1).pdf"
+            href="cv/mosaraf_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-ghost text-lg text-success md:hidden"

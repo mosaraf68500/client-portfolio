@@ -80,7 +80,7 @@ const About = () => {
 
           {/* Download Button */}
           <a
-            href="cv/mosaraf_resume (1).pdf"
+            href="cv/mosaraf_resume.pdf"
             download
             className="btn btn-primary rounded-full inline-flex items-center gap-2"
           >
