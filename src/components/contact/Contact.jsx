@@ -4,13 +4,43 @@ import { FiMail, FiMapPin, FiUser, FiSend } from "react-icons/fi";
 import Aurora from "../../animation/Aurora";
 
 const Contact = () => {
-  const [message,setMessage]=useState(null)
-  const handelSubmit=(e)=>{
-    e.preventDefault()
-    const form =e.target
-    form.reset();
-    setMessage('Your message sent successfully.Thanks for contact me.')
-  }
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [message, setMessage] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+
+    setMessage("Sending...");
+
+    try {
+      const res = await fetch("https://my-portfolio-kappa-five-45.vercel.app/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setMessage("Your message sent successfully. Thanks for contacting me.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setMessage("Error: " + (data.error || "Something went wrong"));
+      }
+    } catch (error) {
+      setMessage("Failed to send message. Please try again.");
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -66,7 +96,9 @@ const Contact = () => {
                 value: "Barishal, Bangladesh",
               },
               {
-                icon: <FiMail className="text-green-500 text-3xl rotate-45" />,
+                icon: (
+                  <FiMail className="text-green-500 text-3xl rotate-45" />
+                ),
                 label: "WhatsApp",
                 value: "+8801783176838",
                 link: "https://wa.me/8801783176838",
@@ -98,30 +130,46 @@ const Contact = () => {
             onSubmit={handelSubmit}
           >
             <input
+              name="name"
               type="text"
               placeholder="Your Name"
               className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
               required
+              value={formData.name}
+              onChange={handleChange}
             />
 
             <input
+              name="email"
               type="email"
               placeholder="Your Email"
               className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
               required
+              value={formData.email}
+              onChange={handleChange}
             />
             <input
+              name="subject"
               type="text"
               placeholder="Subject"
               className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
               required
+              value={formData.subject}
+              onChange={handleChange}
             />
             <textarea
+              name="message"
               placeholder="Your Message"
               className="textarea textarea-bordered w-full min-h-[140px] rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition resize-none"
               required
+              value={formData.message}
+              onChange={handleChange}
             ></textarea>
-            {message&& <p className="btn btn-success btn-soft w-full p-2 rounded-lg">{message}</p>}
+            {message && (
+              <p className="btn btn-success btn-soft w-full p-2 rounded-lg">
+                {message}
+              </p>
+            )}
             <button
               type="submit"
               className="btn btn-primary rounded-full w-full flex items-center justify-center gap-3 font-semibold text-lg hover:gap-5 transition-all duration-300"
