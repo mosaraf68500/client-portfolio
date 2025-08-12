@@ -3,14 +3,14 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router";
 import { FaDownload } from "react-icons/fa";
 import "./header.css";
-import logo from "./../../assets/about/logo.png"
+import logo from "./../../assets/about/logo.png";
 
 const navItems = [
   { path: "about", label: "About" },
   { path: "skills", label: "Skills" },
   { path: "education", label: "Education" },
   { path: "experience", label: "Experience" },
-  { path: "portfolio", label: "Portfolio" },
+  { path: "portfolio", label: "Projects" },
   { path: "contact", label: "Contact" },
 ];
 
@@ -67,7 +67,11 @@ const Header = () => {
             to="/"
             className="text-xl  font-extrabold tracking-wide flex items-center space-x-1"
           >
-            <img className="w-[150px] rounded-2xl " src={logo} alt="Developer Mosaraf logo" />
+            <img
+              className="w-[150px] rounded-2xl "
+              src={logo}
+              alt="Developer Mosaraf logo"
+            />
           </Link>
         </div>
 
@@ -96,14 +100,16 @@ const Header = () => {
           {/* Desktop: Button | Mobile: Icon */}
           <a
             href="cv/mosaraf_resume (1).pdf"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary rounded-full hidden md:inline-flex"
           >
-            Resume
+            See Resume
           </a>
           <a
             href="cv/mosaraf_resume (1).pdf"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-ghost text-lg text-success md:hidden"
           >
             <FaDownload />
@@ -140,4 +146,3 @@ const Header = () => {
 };
 
 export default Header;
-
