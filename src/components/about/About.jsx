@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { FaDownload } from "react-icons/fa";
-import aboutImage from "../../assets/about/mui.webp";
+import aboutImage from "../../assets/banner/IMG20240728181630.jpg";
 
 const About = () => {
   return (

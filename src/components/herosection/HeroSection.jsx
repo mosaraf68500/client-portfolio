@@ -2,15 +2,15 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Typewriter } from 'react-simple-typewriter';
+import { Link as ScrollLink } from "react-scroll";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
-import banner1 from './../../assets/banner/ChatGPT Image Aug 10, 2025, 10_08_21 PM.png';
-import banner2 from '../../assets/banner/converted.jpg';
+import banner1 from './../../assets/banner/IMG20240728181630.jpg';
+import banner2 from '../../assets/banner/IMG20240728181647.jpg';
 import banner3 from '../../assets/banner/sathi.jpg';
-import { Link as ScrollLink } from "react-scroll";
 
 const slides = [
   {
@@ -38,8 +38,6 @@ const slides = [
     ],
   },
 ];
-
-
 
 const HeroSection = () => {
   const prevRef = useRef(null);
@@ -69,11 +67,14 @@ const HeroSection = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="relative h-[97vh] bg-cover bg-center"
+              className="relative h-[100vh] bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="absolute inset-0 bg-black/30 flex flex-col justify-center items-center text-center px-6 md:px-16 text-white">
-                <h1 className="text-3xl md:text-4xl font-extrabold mb-4">
+              {/* Darker Overlay */}
+              <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-6 md:px-16 text-white">
+                
+                {/* Title */}
+                <h1 className="text-2xl md:text-4xl font-extrabold mb-4 drop-shadow-lg animate-fadeIn">
                   {activeIndex === index && (
                     <Typewriter
                       words={slide.typeText}
@@ -86,13 +87,22 @@ const HeroSection = () => {
                     />
                   )}
                 </h1>
-                <p className="text-xl md:text-2xl font-medium mb-6">
-                  <span className="text-primary">MERN</span> Based Solutions
+
+                {/* Subheading */}
+                <p className="text-xl md:text-2xl font-medium mb-6 drop-shadow-md">
+                  <span className="text-primary font-bold">MERN</span> Based Solutions
                 </p>
-                <ScrollLink  to="about"
+
+                {/* Button */}
+                <ScrollLink
+                  to="about"
                   smooth={true}
                   duration={500}
-                  offset={-80} className="btn btn-primary rounded-full">About Me</ScrollLink>
+                  offset={-80}
+                  className="btn btn-primary rounded-full px-8 py-3 shadow-lg hover:scale-105 transition-transform"
+                >
+                  About Me
+                </ScrollLink>
               </div>
             </div>
           </SwiperSlide>
@@ -101,10 +111,20 @@ const HeroSection = () => {
 
       {/* Custom Navigation */}
       <div className="absolute z-20 top-1/2 left-4 transform -translate-y-1/2">
-        <button ref={prevRef} className="btn btn-circle bg-white text-black shadow hover:scale-105 transition">❮</button>
+        <button
+          ref={prevRef}
+          className="btn btn-circle bg-white text-black shadow hover:scale-105 transition"
+        >
+          ❮
+        </button>
       </div>
       <div className="absolute z-20 top-1/2 right-4 transform -translate-y-1/2">
-        <button ref={nextRef} className="btn btn-circle bg-white text-black shadow hover:scale-105 transition">❯</button>
+        <button
+          ref={nextRef}
+          className="btn btn-circle bg-white text-black shadow hover:scale-105 transition"
+        >
+          ❯
+        </button>
       </div>
     </section>
   );
