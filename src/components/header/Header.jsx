@@ -6,11 +6,12 @@ import "./header.css";
 import logo from "./../../assets/about/logo.png";
 
 const navItems = [
+  { path: "/", label: "Home" },
   { path: "about", label: "About" },
-  { path: "skills", label: "Skills" },
+
   { path: "education", label: "Education" },
   { path: "experience", label: "Experience" },
-  { path: "portfolio", label: "Projects" },
+  { path: "portfolio", label: "Gallery" },
   { path: "contact", label: "Contact" },
 ];
 
@@ -68,9 +69,9 @@ const Header = () => {
             className="text-xl  font-extrabold tracking-wide flex items-center space-x-1"
           >
             <img
-              className="w-[150px] rounded-2xl "
+              className="w-[50px] h-[30px] rounded-2xl "
               src={logo}
-              alt="Developer Mosaraf logo"
+              alt="artist logo"
             />
           </Link>
         </div>
@@ -99,10 +100,10 @@ const Header = () => {
         <div className="navbar-end w-fit">
           {/* Desktop: Button | Mobile: Icon */}
           <a
-            href="cv/mosaraf.pdf"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary rounded-full hidden md:inline-flex"
+            className="btn text-[#F4B400] rounded-full hidden md:inline-flex"
           >
             See Resume
           </a>

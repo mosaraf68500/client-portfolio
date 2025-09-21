@@ -44,11 +44,14 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen py-20 bg-base-100 text-base-content relative overflow-hidden"
+      className="min-h-screen py-20 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #FDFAF2 0%, #F8EDE3 50%, #F2E8D9 100%)'
+      }}
     >
       <div className="absolute inset-0 opacity-30">
         <Aurora
-          colorStops={["#007aff", "#00d390", "#FF3232"]}
+          colorStops={["#E8C547", "#D68910", "#A0522D"]}
           blend={0.5}
           amplitude={1.0}
           speed={0.5}
@@ -63,8 +66,8 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-extrabold mb-3">Contact Me</h2>
-          <p className="text-gray-300 max-w-lg mx-auto">
+          <h2 className="text-4xl font-serif font-extrabold mb-3 text-[#5D4037]">Contact Me</h2>
+          <p className="text-[#6B4423] max-w-lg mx-auto leading-relaxed">
             I’m always open to new opportunities and collaborations. Feel free
             to reach out via the form or my contact details.
           </p>
@@ -81,38 +84,41 @@ const Contact = () => {
           >
             {[
               {
-                icon: <FiUser className="text-primary text-3xl" />,
+                icon: <FiUser className="text-[#D68910] text-3xl" />,
                 label: "Name",
-                value: "Mosaraf Hossen",
+                value: "Tamanna Akter",
               },
               {
-                icon: <FiMail className="text-primary text-3xl" />,
+                icon: <FiMail className="text-[#D68910] text-3xl" />,
                 label: "Email",
-                value: "mosaraf.cse8.bu@gmail.com",
+                value: "tamanna@gmail.com",
               },
               {
-                icon: <FiMapPin className="text-primary text-3xl" />,
+                icon: <FiMapPin className="text-[#D68910] text-3xl" />,
                 label: "Location",
-                value: "Barishal, Bangladesh",
+                value: "Chandpur, Bangladesh",
               },
               {
                 icon: (
-                  <FiMail className="text-green-500 text-3xl rotate-45" />
+                  <FiMail className="text-[#A0522D] text-3xl rotate-45" />
                 ),
                 label: "WhatsApp",
-                value: "+8801783176838",
-                link: "https://wa.me/8801783176838",
+                value: "+88017777777",
+                link: "https://wa.me/8801777777",
               },
             ].map(({ icon, label, value, link }, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-5 bg-base-200 p-5 rounded-xl shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+                className="flex items-center gap-5 bg-white/20 backdrop-blur-sm p-5 rounded-xl shadow-md hover:shadow-lg transition-shadow cursor-pointer border border-[#E8C547]/20"
                 onClick={() => link && window.open(link, "_blank")}
+                style={{
+                  background: 'linear-gradient(135deg, rgba(253, 250, 242, 0.8) 0%, rgba(248, 237, 227, 0.8) 100%)'
+                }}
               >
                 <div>{icon}</div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-400">{label}</p>
-                  <p className="text-lg font-medium text-base-content text-wrap break-all">
+                  <p className="text-sm font-semibold text-[#8B4513]">{label}</p>
+                  <p className="text-lg font-medium text-[#5D4037] text-wrap break-all">
                     {value}
                   </p>
                 </div>
@@ -126,14 +132,17 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="space-y-8 bg-base-200 p-8 rounded-2xl shadow-lg"
+            className="space-y-8 p-8 rounded-2xl shadow-lg border border-[#E8C547]/20"
             onSubmit={handelSubmit}
+            style={{
+              background: 'linear-gradient(135deg, rgba(253, 250, 242, 0.9) 0%, rgba(248, 237, 227, 0.9) 100%)'
+            }}
           >
             <input
               name="name"
               type="text"
               placeholder="Your Name"
-              className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
+              className="input input-bordered w-full rounded-lg focus:border-[#D68910] focus:ring-2 focus:ring-[#E8C547]/30 transition bg-white/80 border-[#E8C547]/30 text-[#5D4037] placeholder-[#8B4513]"
               required
               value={formData.name}
               onChange={handleChange}
@@ -143,7 +152,7 @@ const Contact = () => {
               name="email"
               type="email"
               placeholder="Your Email"
-              className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
+              className="input input-bordered w-full rounded-lg focus:border-[#D68910] focus:ring-2 focus:ring-[#E8C547]/30 transition bg-white/80 border-[#E8C547]/30 text-[#5D4037] placeholder-[#8B4513]"
               required
               value={formData.email}
               onChange={handleChange}
@@ -152,7 +161,7 @@ const Contact = () => {
               name="subject"
               type="text"
               placeholder="Subject"
-              className="input input-bordered w-full rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition"
+              className="input input-bordered w-full rounded-lg focus:border-[#D68910] focus:ring-2 focus:ring-[#E8C547]/30 transition bg-white/80 border-[#E8C547]/30 text-[#5D4037] placeholder-[#8B4513]"
               required
               value={formData.subject}
               onChange={handleChange}
@@ -160,19 +169,34 @@ const Contact = () => {
             <textarea
               name="message"
               placeholder="Your Message"
-              className="textarea textarea-bordered w-full min-h-[140px] rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/50 transition resize-none"
+              className="textarea textarea-bordered w-full min-h-[140px] rounded-lg focus:border-[#D68910] focus:ring-2 focus:ring-[#E8C547]/30 transition resize-none bg-white/80 border-[#E8C547]/30 text-[#5D4037] placeholder-[#8B4513]"
               required
               value={formData.message}
               onChange={handleChange}
             ></textarea>
             {message && (
-              <p className="btn btn-success btn-soft w-full p-2 rounded-lg">
+              <p className={`w-full p-2 rounded-lg text-center font-medium ${
+                message.includes("successfully") 
+                  ? "bg-[#E8C547]/20 text-[#D68910] border border-[#E8C547]/30" 
+                  : "bg-red-50/80 text-red-600 border border-red-200/50"
+              }`}>
                 {message}
               </p>
             )}
             <button
               type="submit"
-              className="btn btn-primary rounded-full w-full flex items-center justify-center gap-3 font-semibold text-lg hover:gap-5 transition-all duration-300"
+              className="btn rounded-full w-full flex items-center justify-center gap-3 font-semibold text-lg hover:gap-5 transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, #E8C547 0%, #D68910 100%)',
+                color: '#5D4037',
+                border: '2px solid rgba(232, 197, 71, 0.3)'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.transform = 'translateY(0)';
+              }}
             >
               Send Message <FiSend className="text-xl" />
             </button>

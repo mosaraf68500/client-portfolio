@@ -15,12 +15,12 @@ const Home = () => {
     <>
       <HeroSection></HeroSection>
       <About></About>
-      <Skill></Skill>
+      {/* <Skill></Skill> */}
       <Education></Education>
       <Experience></Experience>
       <Portfolio></Portfolio>
       {/* <AllProjects></AllProjects> */}
-      <Testimonial></Testimonial>
+      {/* <Testimonial></Testimonial> */}
       <Contact></Contact>
       <SocialSidebar></SocialSidebar>
     </>

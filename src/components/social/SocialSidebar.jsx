@@ -1,21 +1,21 @@
 import React from 'react';
-import { FaGithub, FaFacebookF, FaWhatsapp, FaPhone } from 'react-icons/fa';
+import { FaGithub, FaFacebookF, FaWhatsapp, FaPhone, FaInstagram } from 'react-icons/fa';
 
 const SocialSidebar = () => {
   const socials = [
     {
-      icon: <FaGithub />,
-      link: 'https://github.com/mosaraf68500',
+      icon: <FaInstagram />,
+      link: '#',
       bg: 'bg-gray-800/30 text-white hover:bg-gray-700',
     },
     {
       icon: <FaFacebookF />,
-      link: 'https://www.facebook.com/mosaraf.hossion.94',
+      link: '#',
       bg: 'bg-blue-600/30 text-white hover:bg-blue-500',
     },
     {
       icon: <FaWhatsapp />,
-      link: 'https://wa.me/8801783176838',
+      link: '#',
       bg: 'bg-green-500/30 text-white hover:bg-green-400',
     },
     {
