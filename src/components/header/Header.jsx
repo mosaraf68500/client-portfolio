@@ -85,7 +85,7 @@ const Header = () => {
                   smooth={true}
                   duration={500}
                   offset={-80}
-                  className="cursor-pointer custom-nav-link"
+                  className="cursor-pointer custom-nav-link font-semibold"
                   activeClass="text-primary"
                 >
                   {item.label}
@@ -100,7 +100,7 @@ const Header = () => {
           {/* Desktop: Button | Mobile: Icon */}
           <a
             href="#"
-            target="_blank"
+            target=""
             rel="noopener noreferrer"
             className="btn text-[#F4B400] rounded-full hidden md:inline-flex"
           >
