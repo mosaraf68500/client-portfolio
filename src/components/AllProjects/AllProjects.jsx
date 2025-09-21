@@ -1,12 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router'; // ✅ Correct import
-import cool from "../../assets/banner/converted.jpg";
-import rescue from "../../assets/banner/converted.jpg";
-import pizza from "../../assets/banner/converted.jpg";
-import mobile from "../../assets/banner/converted.jpg";
-import football from "../../assets/banner/converted.jpg";
-import panda from "../../assets/banner/converted.jpg";
-import rideShare from "../../assets/banner/converted.jpg";
+import { Link } from 'react-router'; 
+
 
 const AllProjects = () => {
   return (

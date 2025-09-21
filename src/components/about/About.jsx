@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { FaDownload, FaPalette, FaPaintBrush, FaImage } from "react-icons/fa";
-import aboutImage from "../../assets/banner/artist.jpg";
+import aboutImage from "../../assets/banner/artist.jpg"
+
 
 const About = () => {
   return (
@@ -86,7 +87,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <a
-                href="cv/mosaraf.pdf"
+                href="#cv"
                 download
                 className="group relative inline-flex items-center gap-2 px-6 py-3 bg-[#E8C547] text-[#5D4037] font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 border border-[#E8C547]/30 overflow-hidden"
               >

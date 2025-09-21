@@ -1,34 +1,47 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBriefcase, FaPalette, FaPaintBrush, FaUsers, FaAward } from 'react-icons/fa';
+import { FaBriefcase, FaUsers, FaHandshake, FaHeart } from 'react-icons/fa';
 
 const experiences = [
   {
-    role: 'Art Workshop Coordinator',
-    company: 'University Arts Collective, Barishal',
-    period: 'Present',
-    desc: `Lead creative workshops for students and community members, teaching painting techniques and color theory. 
-Organized 5+ art exhibitions showcasing student works. 
-Developed curriculum focusing on expressive painting and mixed media approaches.`,
-    icon: FaPalette,
+    role: 'Community Service (Volunteer)',
+    position: 'Founder and President',
+    organization: 'Voices Against Child Marriage (VACM)',
+    period: 'Grade 11-12 & Post Graduate',
+    description: `Launched college-to-college campaign raising awareness about child marriage prevention. 
+Built a 2K+ members network and mobilized volunteers for grassroots activism. 
+Partnered with Bangladeshi police to successfully stop 50+ child marriages through community interventions.`,
+    icon: FaUsers,
   },
   {
-    role: 'Resident Artist',
-    company: 'Local Art Gallery Network, Barishal Division',
-    period: '2023 - Present',
-    desc: `Create and exhibit original paintings in local galleries. 
-Collaborated with 3 community art projects to create public installations. 
-Participated in artist residencies exploring landscape painting and environmental themes.`,
-    icon: FaPaintBrush,
+    role: 'Human Rights Advocate',
+    position: 'Campaign Coordinator',
+    organization: 'Student Action for Social Justice',
+    period: 'Grade 12 & Post Graduate',
+    description: `Organized awareness campaigns reaching 5,000+ students across 10 colleges. 
+Coordinated with local NGOs to establish safe spaces for at-risk youth. 
+Developed educational materials distributed to 15 schools in rural areas, focusing on gender equality and child rights.`,
+    icon: FaHandshake,
   },
   {
-    role: 'Freelance Illustrator & Commission Artist',
-    company: 'Independent Artist',
-    period: 'Ongoing',
-    desc: `Create custom artwork commissions for clients including portraits, landscapes, and abstract pieces. 
-Developed digital illustration skills alongside traditional painting techniques. 
-Completed 25+ client projects with focus on personalized storytelling through visual art.`,
-    icon: FaAward,
+    role: 'Community Outreach Volunteer',
+    position: 'Team Leader',
+    organization: 'Youth for Change Network',
+    period: 'Grade 11-12',
+    description: `Led weekly community outreach programs serving 200+ underprivileged children. 
+Organized educational workshops and skill-building sessions for marginalized communities. 
+Collaborated with local government officials to establish community learning centers in 3 villages.`,
+    icon: FaHeart,
+  },
+  {
+    role: 'Social Impact Coordinator',
+    position: 'Project Manager',
+    organization: 'Empower Youth Initiative',
+    period: 'Post Graduate',
+    description: `Managed a year-long social impact project benefiting 1,500+ students through literacy programs. 
+Secured funding and partnerships with 5 international NGOs for educational resources. 
+Trained 50+ volunteer teachers and established monitoring systems for program effectiveness.`,
+    icon: FaBriefcase,
   },
 ];
 
@@ -50,8 +63,7 @@ const Experience = () => {
       id="experience" 
       className="min-h-screen py-20 relative overflow-hidden"
       style={{
-       background: 'linear-gradient(135deg, #FFF8F0 0%, #FFF5EB 0%, #FFF3E8 100%)'
-
+       background: 'linear-gradient(135deg, #FFF8F0 0%, #FFF5EB 50%, #FFF3E8 100%)'
       }}
     >
       {/* Subtle artistic background elements */}
@@ -72,11 +84,11 @@ const Experience = () => {
           <div className="inline-flex items-center gap-3 mb-4 px-6 py-3 bg-[#E8C547]/15 border border-[#E8C547]/25 rounded-full max-w-max mx-auto">
             <FaBriefcase className="text-[#D68910] text-xl" />
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#5D4037]">
-              Creative Experience
+              Social Impact Journey
             </h2>
           </div>
           <p className="text-lg text-[#6B4423] max-w-2xl mx-auto leading-relaxed">
-            My artistic journey through exhibitions, workshops, and creative collaborations
+            My commitment to community service and creating positive social change through volunteer leadership
           </p>
           <div className="w-20 h-0.5 bg-gradient-to-r from-[#E8C547]/50 to-[#D68910]/50 mx-auto mt-4 rounded-full"></div>
         </motion.div>
@@ -118,28 +130,37 @@ const Experience = () => {
                         <h3 className="text-xl font-serif font-semibold text-[#5D4037] mb-1 leading-tight">
                           {exp.role}
                         </h3>
-                        <h4 className="text-lg font-medium text-[#D68910] truncate">
-                          {exp.company}
+                        <h4 className="text-lg font-medium text-[#D68910] mb-1 truncate">
+                          <span className="text-base text-[#8B4513]">{exp.position}</span> at {exp.organization}
                         </h4>
-                        <p className="text-sm font-medium text-[#8B4513] bg-[#F8EDE3]/40 px-3 py-1 rounded-full inline-block mt-1">
+                        <p className="text-sm font-medium text-[#6B4423] bg-[#F8EDE3]/40 px-3 py-1 rounded-full inline-block">
                           {exp.period}
                         </p>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <div className="space-y-2">
-                      {exp.desc.split('\n').map((line, lineIndex) => (
-                        <p 
-                          key={lineIndex} 
-                          className="text-base text-[#6B4423] leading-relaxed pl-1"
-                        >
-                          {lineIndex === 0 ? (
-                            <span className="inline-block w-2 h-2 bg-[#E8C547]/60 rounded-full mr-2 align-middle"></span>
-                          ) : null}
-                          {line}
-                        </p>
+                    <div className="space-y-3">
+                      {exp.description.split('\n').map((line, lineIndex) => (
+                        <div key={lineIndex} className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-2 h-2 bg-[#E8C547]/60 rounded-full mt-2.5"></div>
+                          <p className="text-base text-[#6B4423] leading-relaxed flex-1">
+                            {line}
+                          </p>
+                        </div>
                       ))}
+                    </div>
+
+                    {/* Impact Stats */}
+                    <div className="mt-4 pt-4 border-t border-[#E8C547]/10">
+                      <div className="flex flex-wrap gap-4 text-sm">
+                        <span className="px-3 py-1 bg-[#E8C547]/20 text-[#D68910] rounded-full font-medium">
+                          Community Impact
+                        </span>
+                        <span className="px-3 py-1 bg-[#D68910]/20 text-[#8B4513] rounded-full font-medium">
+                          Volunteer Leadership
+                        </span>
+                      </div>
                     </div>
 
                     {/* Artistic accent */}
@@ -164,11 +185,11 @@ const Experience = () => {
         >
           <div className="max-w-3xl mx-auto space-y-4">
             <h3 className="text-xl font-serif font-semibold text-[#5D4037] mb-3">
-              "Every experience is a new color on my palette"
+              "Service is the rent we pay for living on this earth"
             </h3>
-            <p className="text-base text-[#8B4513] italic leading-relaxed">
-              Each project, workshop, and collaboration adds depth and perspective to my artistic voice, 
-              creating a rich tapestry of creative expression that continues to evolve.
+            <p className="text-base text-[#8B4423] italic leading-relaxed">
+              Through community service, I've learned that true leadership comes from lifting others up. 
+              Each initiative has been a journey of growth, connection, and meaningful impact that continues to shape my purpose.
             </p>
             <div className="flex justify-center gap-2 mt-4">
               <div className="w-12 h-0.5 bg-[#E8C547]/40 rounded-full"></div>
