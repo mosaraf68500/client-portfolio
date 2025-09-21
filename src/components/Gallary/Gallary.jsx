@@ -245,7 +245,7 @@ const Gallery = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.h2
-          className="text-5xl font-serif font-bold text-center mb-4 text-[#5D4037]"
+          className="text-2xl lg:text-4xl font-serif font-bold text-center mb-4 text-[#5D4037]"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -255,7 +255,7 @@ const Gallery = () => {
         </motion.h2>
 
         <motion.p
-          className="text-lg text-center text-[#6B4423] mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-[12px] md:text-[15px] text-center text-[#6B4423] mb-12 max-w-3xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -264,27 +264,28 @@ const Gallery = () => {
           A curated collection of my recent paintings and mixed media works
         </motion.p>
 
-        {/* Category Buttons */}
-        <div className="flex justify-center gap-3 mb-12 flex-wrap">
-          {categories.map((cat) => (
-            <motion.button
-              key={cat}
-              onClick={() => handleCategoryChange(cat)}
-              className={`px-6 py-3 cursor-pointer rounded-full font-medium border-2 transition-all duration-300 relative overflow-hidden group ${
-                selectedCategory === cat
-                  ? "bg-[#E8C547] text-[#5D4037] border-[#E8C547] shadow-lg"
-                  : "bg-white/50 border-[#E8C547]/30 text-[#6B4423] hover:bg-[#E8C547]/10 hover:border-[#E8C547]/50"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">{cat}</span>
-              <div
-                className={`absolute inset-0 bg-gradient-to-r from-[#E8C547] to-[#D68910] opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-              ></div>
-            </motion.button>
-          ))}
-        </div>
+      {/* Category Buttons */}
+<div className="grid grid-cols-3 md:grid-cols-6 gap-3 lg:w-2/3 mx-auto mb-12">
+  {categories.map((cat) => (
+    <motion.button
+      key={cat}
+      onClick={() => handleCategoryChange(cat)}
+      className={`px-6 py-3 cursor-pointer rounded-full font-[12px] border-2 transition-all duration-300 relative overflow-hidden group ${
+        selectedCategory === cat
+          ? "bg-[#E8C547] text-[#5D4037] border-[#E8C547] shadow-lg"
+          : "bg-white/50 border-[#E8C547]/30 text-[#6B4423] hover:bg-[#E8C547]/10 hover:border-[#E8C547]/50"
+      }`}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <span className="relative z-10">{cat}</span>
+      <div
+        className={`absolute inset-0 bg-gradient-to-r from-[#E8C547] to-[#D68910] opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+      ></div>
+    </motion.button>
+  ))}
+</div>
+
 
         {/* Artwork Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">

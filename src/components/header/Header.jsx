@@ -8,7 +8,6 @@ import logo from "./../../assets/about/logo.png";
 const navItems = [
   { path: "/", label: "Home" },
   { path: "about", label: "About" },
-
   { path: "education", label: "Education" },
   { path: "experience", label: "Experience" },
   { path: "portfolio", label: "Gallery" },
@@ -108,8 +107,8 @@ const Header = () => {
             See Resume
           </a>
           <a
-            href="cv/mosaraf.pdf"
-            target="_blank"
+            href="#"
+            target=""
             rel="noopener noreferrer"
             className="btn btn-ghost text-lg text-success md:hidden"
           >
@@ -120,7 +119,7 @@ const Header = () => {
 
       {/* SIDEBAR */}
       <div
-        className={`fixed top-0 pt-10 left-0 z-[999] h-full w-64 bg-base-100 shadow-md transform transition-transform duration-300 ${
+        className={`fixed bg-amber-100 text-black top-16  left-0 z-[999] rounded w-35 shadow-md transform transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
         ref={sidebarRef}

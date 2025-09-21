@@ -1,42 +1,42 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaGraduationCap, FaPalette, FaPaintBrush, FaBookOpen } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaGraduationCap, FaPaintBrush, FaBookOpen } from "react-icons/fa";
 
 const educationList = [
-  
   {
-    degree: 'Higher Secondary Certificate (HSC) - Science',
-    institution: 'Chandpur Govt girls college,Chandpur',
-    period: 'Passing Year: 2022',
-    desc: 'Achieved GPA: 5.00 out of 5. Focused on science subjects with strong academic performance.',
+    degree: "Higher Secondary Certificate (HSC) - Science",
+    institution: "Chandpur Govt. Girls College, Chandpur",
+    period: "Passing Year: 2022",
+    desc: "Achieved GPA 5.00/5.00 with distinction. Specialized in core science subjects and developed a strong analytical foundation.",
     icon: FaPaintBrush,
   },
   {
-    degree: 'Secondary school Certificate, Science',
-    institution: 'Awinpur High school,Chandpur',
-    period: 'Passing Year: 2019',
-    desc: 'Achieved GPA: 5.00 out of 5. Focused on science subjects with strong academic performance.',
+    degree: "Secondary School Certificate (SSC) - Science",
+    institution: "Awinpur High School, Chandpur",
+    period: "Passing Year: 2019",
+    desc: "Achieved GPA 5.00/5.00 with excellence. Focused on mathematics, physics, and chemistry, building curiosity and problem-solving skills.",
     icon: FaBookOpen,
   },
 ];
 
 const Education = () => {
   return (
-    <section 
-      id="education" 
+    <section
+      id="education"
       className="min-h-screen py-20 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #FDFAF2 0%, #F8EDE3 50%, #F2E8D9 100%)'
+        background:
+          "linear-gradient(135deg, #FAF9F6 0%, #F3ECE3 50%, #EFE6DA 100%)",
       }}
     >
-      {/* Subtle artistic background elements */}
-      <div className="absolute inset-0 opacity-3">
-        <div className="absolute top-20 left-10 w-16 h-16 bg-[#E8C547]/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-40 right-20 w-12 h-12 bg-[#D68910]/20 rounded-full blur-lg"></div>
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-24 left-12 w-20 h-20 bg-[#E8C547]/30 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-32 right-16 w-14 h-14 bg-[#D68910]/30 rounded-full blur-xl"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
-        {/* Header Section */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,23 +44,24 @@ const Education = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-3 mb-4 px-6 py-3 bg-[#E8C547]/20 border border-[#E8C547]/30 rounded-full">
+          <div className="inline-flex items-center gap-3 mb-4 px-6 py-2 bg-[#E8C547]/15 border border-[#E8C547]/30 rounded-full">
             <FaGraduationCap className="text-[#D68910] text-xl" />
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#5D4037]">
-              Artistic Journey
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#4A3C31]">
+              Education
             </h2>
           </div>
-          <p className="text-lg text-[#6B4423] max-w-2xl mx-auto leading-relaxed">
-            My educational path that shaped my artistic vision and creative expression
+          <p className="text-[12px] md:text-[15px] text-[#5C4033] max-w-2xl mx-auto leading-relaxed">
+            A solid academic foundation that has shaped my discipline,
+            creativity, and professional vision — empowering me to grow with
+            knowledge and purpose.
           </p>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-[#E8C547]/60 to-[#D68910]/60 mx-auto mt-4 rounded-full"></div>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-[#E8C547]/70 to-[#D68910]/70 mx-auto mt-4 rounded-full"></div>
         </motion.div>
 
-        {/* Artistic Timeline */}
-        <div className="relative ml-8">
-          {/* Artistic Timeline Line */}
+        {/* Timeline */}
+        <div className="relative ml-6 sm:ml-12">
           <div className="absolute left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#E8C547] to-[#D68910] rounded-full"></div>
-          
+
           <div className="space-y-12">
             {educationList.map((edu, index) => {
               const IconComponent = edu.icon;
@@ -73,37 +74,32 @@ const Education = () => {
                   viewport={{ once: true }}
                   className="relative group"
                 >
-                  {/* Timeline Dot */}
-                  <div className="absolute left-[6px] top-2 w-4 h-4 bg-gradient-to-r from-[#E8C547] to-[#D68910] rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300 z-10"></div>
+                  {/* Dot */}
+                  <div className="absolute left-[6px] top-2 w-4 h-4 bg-gradient-to-r from-[#E8C547] to-[#D68910] rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 z-10"></div>
 
-                  {/* Artistic Card */}
-                  <div className="ml-8 p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-[#E8C547]/20 shadow-lg group-hover:shadow-xl transition-all duration-300 hover:-translate-x-2">
-                    {/* Header with Icon */}
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="p-2 bg-gradient-to-br from-[#E8C547]/20 to-[#D68910]/20 rounded-xl border border-[#E8C547]/30 flex-shrink-0">
-                        <IconComponent className="text-[#D68910] text-xl group-hover:rotate-12 transition-transform duration-300" />
+                  {/* Card */}
+                  <div className="ml-8 p-6 rounded-2xl bg-white/70 backdrop-blur-md border border-[#E8C547]/20 shadow-md group-hover:shadow-lg transition-all duration-300 hover:-translate-x-1">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-4">
+                      <div className="p-3 hidden md:block bg-gradient-to-br from-[#E8C547]/20 to-[#D68910]/20 rounded-lg border border-[#E8C547]/30 flex-shrink-0">
+                        <IconComponent className="text-[#D68910]  text-xl group-hover:rotate-12 transition-transform duration-300" />
                       </div>
-                      
+
                       <div className="flex-1">
-                        <h3 className="text-xl font-serif font-semibold text-[#5D4037] mb-1 leading-tight">
+                        <h3 className="text-lg md:text-xl font-serif font-semibold text-[#4A3C31] mb-1">
                           {edu.degree}
                         </h3>
-                        <h4 className="text-lg font-medium text-[#D68910] mb-2">
+                        <h4 className="text-md md:text-lg  font-medium text-[#D68910] mb-2">
                           {edu.institution}
                         </h4>
-                        <p className="text-sm font-medium text-[#8B4513] bg-[#F8EDE3]/50 px-3 py-1 rounded-full inline-block">
+                        <p className="text-xs md:text-sm font-medium text-[#8B5E3C] bg-[#F8EDE3]/60 px-3 py-1 rounded-full inline-block">
                           {edu.period}
                         </p>
                       </div>
                     </div>
 
-                    {/* Description */}
-                    <p className="text-base text-[#6B4423] leading-relaxed pr-4">
+                    <p className="text-[10px] md:text-[14px] text-[#5C4033] leading-relaxed">
                       {edu.desc}
                     </p>
-
-                    {/* Artistic accent line */}
-                    <div className="absolute right-4 top-6 w-px h-20 bg-gradient-to-b from-[#E8C547]/30 to-transparent"></div>
                   </div>
                 </motion.div>
               );
@@ -111,7 +107,7 @@ const Education = () => {
           </div>
         </div>
 
-        {/* Artistic Footer */}
+        {/* Footer */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,11 +116,12 @@ const Education = () => {
           className="text-center mt-16 pt-8 border-t border-[#E8C547]/20"
         >
           <div className="max-w-2xl mx-auto">
-            <h3 className="text-xl font-serif font-semibold text-[#5D4037] mb-3">
-              "Education is the foundation of every artist's journey"
+            <h3 className="text-lg md:text-xl font-serif font-semibold text-[#4A3C31] mb-3">
+              "Education is the foundation of growth and success."
             </h3>
-            <p className="text-sm text-[#8B4513] italic">
-              Each stage of learning has been a brushstroke in the canvas of my artistic development
+            <p className="text-sm text-[#6B4423] italic">
+              Each milestone has contributed to building resilience,
+              professionalism, and creative thinking.
             </p>
           </div>
         </motion.div>

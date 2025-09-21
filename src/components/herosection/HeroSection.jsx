@@ -10,7 +10,7 @@ import 'swiper/css/autoplay';
 
 import banner1 from './../../assets/banner/banner1.jpg';
 import banner2 from '../../assets/banner/banner2.jpg';
-import banner3 from '../../assets/banner/banner1.jpg';
+import banner3 from '../../assets/banner/banner4.jpg';
 
 const slides = [
   {
@@ -56,7 +56,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="herosection" className="relative min-h-[97vh]">
+    <section id="herosection" className="relative min-h-screen">
       <style jsx>{`
         :global(.hero-gradient) {
           background: linear-gradient(135deg, 
@@ -69,7 +69,6 @@ const HeroSection = () => {
           border: 2px solid #F5F5DC;
           color: #4A2C0B;
           font-weight: 700;
-          text-shadow: none;
           box-shadow: 0 4px 15px rgba(244, 180, 0, 0.4);
         }
         :global(.btn-artistic:hover) {
@@ -101,11 +100,13 @@ const HeroSection = () => {
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="relative h-[100vh] bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }}
-            >
+          <SwiperSlide key={index} className="w-full h-screen">
+            <div className="relative w-full h-screen overflow-hidden">
+              <img
+                src={slide.image}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 hero-gradient flex flex-col justify-center items-center text-center px-6 md:px-16">
                 
                 {/* Title */}

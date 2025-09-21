@@ -1,110 +1,153 @@
 import React from "react";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
-import { FaDownload, FaPalette, FaPaintBrush, FaImage } from "react-icons/fa";
-import aboutImage from "../../assets/banner/artist.jpg"
-
+import { FaDownload, FaPalette, FaPaintBrush, FaImage, FaMedal } from "react-icons/fa";
+import aboutImage from "../../assets/banner/banner3.jpg";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen py-20 relative overflow-hidden"
+      className="min-h-screen py-12 sm:py-16 lg:py-20 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #FDFAF2 0%, #F8EDE3 50%, #F2E8D9 100%)'
+        background: "linear-gradient(135deg, #FDFAF2 0%, #F8EDE3 50%, #F2E8D9 100%)",
       }}
     >
-      {/* Subtle background elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-10 w-20 h-20 bg-[#E8C547]/30 rounded-full blur-xl"></div>
-        <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-[#D68910]/30 rounded-full blur-lg"></div>
+      {/* Background elements */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-1/4 left-6 w-14 h-14 bg-[#E8C547]/30 rounded-full blur-xl"></div>
+        <div className="absolute bottom-1/4 right-6 w-12 h-12 bg-[#D68910]/30 rounded-full blur-lg"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Image Section */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative group"
+            className="relative order-2 lg:order-1 group w-full"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#E8C547]/20 to-[#D68910]/20 rounded-2xl blur-sm opacity-70"></div>
-            <img
-              src={aboutImage}
-              alt="Artist Portrait"
-              className="rounded-2xl w-full shadow-lg object-cover max-h-[500px] border-2 border-[#E8C547]/30 relative z-10 group-hover:scale-[1.02] transition-transform duration-500"
-            />
-            {/* Subtle frame elements */}
-            <div className="absolute top-3 left-3 w-6 h-6 border border-[#D68910]/40 rounded-full bg-white/10"></div>
-            <div className="absolute bottom-3 right-3 w-4 h-4 border border-[#A0522D]/40 rounded-full bg-white/10"></div>
+            <div className="absolute -inset-2 bg-gradient-to-r from-[#E8C547]/20 to-[#D68910]/20 rounded-2xl blur-sm opacity-70"></div>
+            <div className="relative overflow-hidden rounded-2xl w-full">
+              <img
+                src={aboutImage}
+                alt="Artist Portrait"
+                className="w-full h-[280px] sm:h-[320px] md:h-[380px] lg:h-[460px] xl:h-[500px] object-cover group-hover:scale-[1.02] transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#5D4037]/10 via-transparent to-transparent pointer-events-none"></div>
+            </div>
+            <motion.div
+              className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-[#E8C547]/90 text-[#5D4037] px-4 py-2 rounded-full text-sm font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap"
+              initial={{ y: 10, opacity: 0 }}
+              whileHover={{ y: 0, opacity: 1 }}
+            >
+              View Gallery
+            </motion.div>
           </motion.div>
 
-          {/* Text Content */}
+          {/* Text Section */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="order-1 lg:order-2 space-y-6 text-center lg:text-left"
           >
-            {/* Clean artistic title */}
+            {/* Title */}
             <div className="relative">
-              <h2 className="text-4xl md:text-5xl font-serif font-extrabold mb-3 leading-tight">
-                <span className="text-[#5D4037] block">Visual</span>
-                <span className="text-[#D68910]">Artist</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[#E8C547]/10 border border-[#E8C547]/30 rounded-full mx-auto lg:mx-0">
+                <FaPalette className="text-[#D68910] text-xl" />
+                <span className="text-sm font-medium text-[#8B4513] uppercase tracking-wide">
+                  Visual Artist
+                </span>
+              </div>
+              <h2 className="text-2xl md:text-4xl flex gap-1.5 justify-center items-center md:flex-col lg:items-start  font-serif font-extrabold leading-tight mb-3">
+                <span className="text-[#5D4037] block">Creative</span>
+                <span className="text-[#D68910]">Visionary</span>
               </h2>
-              <div className="absolute -bottom-1 left-0 w-24 h-0.5 bg-[#E8C547]/60 rounded-full"></div>
+              <div className="absolute -bottom-3 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-20 h-0.5 bg-gradient-to-r from-[#E8C547]/60 to-[#D68910]/60 rounded-full"></div>
             </div>
 
-            {/* Clean subtitle */}
-            <div className="relative">
-              <h4 className="text-xl font-medium text-[#5D4037] mb-6 flex items-center gap-2">
-                <FaPaintBrush className="text-[#D68910] text-2xl" />
-                Tamanna Akter
-              </h4>
+            {/* Subtitle */}
+            <div className="text-start">
+              <h4 className=" text-lg lg:text-xl font-medium text-[#5D4037] flex lg:items-center gap-2  lg:justify-start">
+              <FaPaintBrush className="text-[#D68910] text-xl" />
+              Tamanna Akter
+            </h4>
             </div>
 
-            {/* Clean description */}
-            <div className="space-y-4">
-              <p className="text-base leading-relaxed text-[#6B4423] font-light max-w-xl">
-                I'm a dedicated <span className="font-medium text-[#D68910]">visual artist</span> who creates paintings that capture the beauty of nature and human emotion. My work explores warm earth tones and golden light, inspired by sunsets and natural landscapes.
+            {/* Description */}
+            <div className="space-y-4 max-w-lg mx-auto lg:mx-0">
+              <p className="text-[12px] md:text-[15px] leading-relaxed text-[#6B4423] font-light">
+                I am a <span className="font-semibold text-[#D68910]">visual artist</span> inspired by the relationship between nature, emotion, and human experience. My paintings seek to capture beauty in fleeting moments while expressing depth through color and form.
               </p>
-              <p className="text-base leading-relaxed text-[#6B4423] font-light max-w-xl">
-                Blending <span className="font-medium text-[#A0522D]">traditional techniques</span> with contemporary approaches, I create pieces that tell stories through color and form. Each artwork is a thoughtful exploration of light, texture, and emotion.
+              <p className="text-base lg:text-lg leading-relaxed text-[#6B4423] font-light">
+                Blending <span className="font-semibold text-[#A0522D]">traditional techniques</span> with modern innovation, I create meaningful pieces that speak both personally and universally. Each artwork is an invitation to connect with the soul.
               </p>
             </div>
 
-            {/* Clean stats with subtle styling */}
-           
+            {/* Stats */}
+            <motion.div
+              className="grid grid-cols-3 sm:grid-cols-3 gap-3 md:gap-6 mt-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              {[
+                { icon: FaImage, number: 50, label: "Artworks", color: "#E8C547" },
+                { icon: FaPaintBrush, number: 5, label: "Exhibitions", color: "#D68910" },
+                { icon: FaMedal, number: 3, label: "Awards", color: "#A0522D" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={i}
+                  className="flex flex-col items-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-[#E8C547]/20 hover:bg-white/20 transition-all duration-300"
+                  whileHover={{ y: -2, scale: 1.02 }}
+                >
+                  <stat.icon className="text-2xl mb-2" style={{ color: stat.color }} />
+                  <div className="text-2xl lg:text-3xl font-bold" style={{ color: stat.color }}>
+                    <CountUp end={stat.number} duration={2.5} />+
+                  </div>
+                  <span className="text-sm text-[#8B4513] font-medium">{stat.label}</span>
+                </motion.div>
+              ))}
+            </motion.div>
 
-            {/* Clean download button */}
+            {/* Download Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
+              className="flex justify-center lg:justify-start"
             >
               <a
                 href="#cv"
                 download
-                className="group relative inline-flex items-center gap-2 px-6 py-3 bg-[#E8C547] text-[#5D4037] font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 border border-[#E8C547]/30 overflow-hidden"
+                className="group relative inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#E8C547] to-[#D68910] text-[#5D4037] font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-400 overflow-hidden border border-[#E8C547]/30 text-[12px] md:text-base"
               >
                 <FaDownload className="text-lg group-hover:-translate-y-1 transition-transform duration-300" />
-                <span>View Portfolio</span>
-                
-                {/* Subtle shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+                <span className="relative z-10">Download Portfolio</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </a>
             </motion.div>
 
-            {/* Subtle signature */}
-            <div className="flex items-center gap-2 pt-4 opacity-70">
-              <div className="w-6 h-0.5 bg-[#E8C547]/50 rounded"></div>
-              <span className="text-xs text-[#8B4513] italic font-serif">"Art captures what words cannot"</span>
-              <div className="w-6 h-0.5 bg-[#E8C547]/50 rounded"></div>
-            </div>
+            {/* Signature */}
+            <motion.div
+              className="flex items-center justify-center lg:justify-start gap-3 pt-6 opacity-80"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-6 h-0.5 bg-gradient-to-r from-[#E8C547]/40 to-[#D68910]/40 rounded-full"></div>
+              <span className="text-sm text-[#8B4513] italic font-serif">
+                "Art speaks where words are unable to explain."
+              </span>
+              <div className="w-6 h-0.5 bg-gradient-to-l from-[#E8C547]/40 to-[#D68910]/40 rounded-full"></div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

@@ -66,8 +66,8 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-serif font-extrabold mb-3 text-[#5D4037]">Contact Me</h2>
-          <p className="text-[#6B4423] max-w-lg mx-auto leading-relaxed">
+          <h2 className="text-2xl lg:text-4xl font-serif font-extrabold mb-3 text-[#5D4037]">Contact Me</h2>
+          <p className="text-[#6B4423] text-[12px] md:text-[15px] max-w-lg mx-auto leading-relaxed">
             I’m always open to new opportunities and collaborations. Feel free
             to reach out via the form or my contact details.
           </p>
@@ -118,7 +118,7 @@ const Contact = () => {
                 <div>{icon}</div>
                 <div>
                   <p className="text-sm font-semibold text-[#8B4513]">{label}</p>
-                  <p className="text-lg font-medium text-[#5D4037] text-wrap break-all">
+                  <p className=" text-sm lg:text-lg font-medium text-[#5D4037] text-wrap break-all">
                     {value}
                   </p>
                 </div>
