@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <>
       {/* NAVBAR */}
-      <div className="navbar fixed top-2 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-md bg-base-100/40 shadow-md transition-all duration-300 w-[95%] max-w-[1500px] mx-auto rounded-box md:rounded-[50px] px-5 md:px-10 justify-between">
+      <div className="navbar fixed top-2 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-md bg-gradient-to-r from-yellow-100/40 to-yellow-200/30 shadow-md text-gray-800 transition-all duration-300 w-[95%] max-w-[1500px] mx-auto rounded-box md:rounded-[50px] px-5 md:px-10 justify-between">
         {/* Start */}
         <div className="navbar-start w-fit">
           <div className="lg:hidden">
