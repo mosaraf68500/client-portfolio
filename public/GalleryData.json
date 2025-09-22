@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "title": "Sunset Symphony",
+    "thumbnail": "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+    "slider": [
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg"
+    ],
+    "category": "Landscape",
+    "medium": "Oil on Canvas",
+    "description": "A vibrant sunset landscape capturing the golden hour's warm embrace. This piece explores the interplay of light and shadow as the sun dips below the horizon, painting the sky with fiery oranges and soft purples. 24x36 inches, 2024.",
+    "dimensions": "24x36 inches",
+    "year": "2024",
+    "materials": "Oil on Canvas",
+    "techniques": ["Wet-on-wet technique", "Impasto", "Glazing"],
+    "availability": "Available for purchase",
+    "price": "$850",
+    "processNotes": "Created over 3 weeks with daily plein air studies"
+  },
+  {
+    "id": 2,
+    "title": "Whispers of the Forest",
+    "thumbnail": "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+    "slider": [
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg"
+    ],
+    "category": "Nature",
+    "medium": "Acrylic on Wood Panel",
+    "description": "An intimate exploration of forest textures and light filtering through ancient trees. This piece captures the quiet majesty of nature's cathedral with layered greens and golden highlights. 18x24 inches, 2023.",
+    "dimensions": "18x24 inches",
+    "year": "2023",
+    "materials": "Acrylic on Wood Panel",
+    "techniques": ["Layering", "Dry brush", "Sgraffito"],
+    "availability": "Sold",
+    "price": "SOLD",
+    "processNotes": "Inspired by a morning hike in the local forest reserve"
+  },
+  {
+    "id": 3,
+    "title": "Urban Reverie",
+    "thumbnail": "https://i.ibb.co.com/bgK4c6FN/fb.jpg",
+    "slider": [
+      "https://i.ibb.co.com/bgK4c6FN/fb.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg"
+    ],
+    "category": "Abstract",
+    "medium": "Mixed Media on Canvas",
+    "description": "An abstract interpretation of city life and human connection, blending geometric forms with organic textures. This piece explores the rhythm of urban existence through bold contrasts and layered compositions. 30x40 inches, 2024.",
+    "dimensions": "30x40 inches",
+    "year": "2024",
+    "materials": "Mixed Media on Canvas",
+    "techniques": ["Collage", "Acrylic pouring", "Charcoal sketching"],
+    "availability": "Commission Available",
+    "price": "Contact for pricing",
+    "processNotes": "Developed from urban photography studies and memory"
+  },
+  {
+    "id": 4,
+    "title": "Ocean's Memory",
+    "thumbnail": "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+    "slider": [
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg"
+    ],
+    "category": "Seascape",
+    "medium": "Watercolor on Paper",
+    "description": "A delicate watercolor study of ocean waves and their eternal dance with the shore. This piece captures the fluidity and movement of water through translucent layers and careful wet-on-dry techniques. 16x20 inches, 2023.",
+    "dimensions": "16x20 inches",
+    "year": "2023",
+    "materials": "Watercolor on Paper",
+    "techniques": ["Wet-on-dry", "Salt technique", "Negative painting"],
+    "availability": "Available for purchase",
+    "price": "$450",
+    "processNotes": "Painted en plein air during coastal residency"
+  },
+  {
+    "id": 5,
+    "title": "Midnight Garden",
+    "thumbnail": "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+    "slider": [
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg"
+    ],
+    "category": "Floral",
+    "medium": "Oil on Canvas",
+    "description": "A nocturnal floral study illuminated by soft moonlight, exploring the mystery and beauty of night-blooming flowers. Rich blues and silvers create a dreamlike atmosphere. 20x24 inches, 2024.",
+    "dimensions": "20x24 inches",
+    "year": "2024",
+    "materials": "Oil on Canvas",
+    "techniques": ["Glazing", "Scumbling", "Soft blending"],
+    "availability": "Private Collection",
+    "price": "N/A",
+    "processNotes": "Painted under full moonlight for authentic lighting"
+  },
+  {
+    "id": 6,
+    "title": "Golden Horizon",
+    "thumbnail": "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+    "slider": [
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg",
+      "https://i.ibb.co.com/LdWyscjc/download-22.jpg"
+    ],
+    "category": "Landscape",
+    "medium": "Acrylic on Canvas",
+    "description": "A majestic landscape capturing the golden hour over rolling hills. This piece celebrates the warmth of sunlight and the infinite possibilities of the horizon. 22x28 inches, 2024.",
+    "dimensions": "22x28 inches",
+    "year": "2024",
+    "materials": "Acrylic on Canvas",
+    "techniques": ["Palette knife", "Wet blending", "Layering"],
+    "availability": "Available for purchase",
+    "price": "$650",
+    "processNotes": "Inspired by early morning landscape studies"
+  }
+]

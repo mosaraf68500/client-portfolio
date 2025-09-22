@@ -83,6 +83,7 @@ const Header = () => {
                 <ScrollLink
                   to={item.path}
                   smooth={true}
+                  
                   duration={500}
                   offset={-80}
                   className="cursor-pointer custom-nav-link font-semibold"

@@ -11,6 +11,12 @@ import {
   FaLock,
   FaChevronLeft,
   FaChevronRight,
+  FaRulerCombined,
+  FaCalendarAlt,
+  FaBrush,
+  FaQuoteLeft,
+  FaHeart,
+  FaShareAlt,
 } from "react-icons/fa";
 import Modal from "react-modal";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -187,13 +193,11 @@ const Gallery = () => {
     }
   };
 
-  // Reset to first page when category changes
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     setCurrentPage(1);
   };
 
-  // Generate page numbers for pagination
   const getPageNumbers = () => {
     const pages = [];
     const maxVisiblePages = 5;
@@ -264,28 +268,27 @@ const Gallery = () => {
           A curated collection of my recent paintings and mixed media works
         </motion.p>
 
-      {/* Category Buttons */}
-<div className="grid grid-cols-3 md:grid-cols-6 gap-3 lg:w-2/3 mx-auto mb-12">
-  {categories.map((cat) => (
-    <motion.button
-      key={cat}
-      onClick={() => handleCategoryChange(cat)}
-      className={`px-6 py-3 cursor-pointer rounded-full font-[12px] border-2 transition-all duration-300 relative overflow-hidden group ${
-        selectedCategory === cat
-          ? "bg-[#E8C547] text-[#5D4037] border-[#E8C547] shadow-lg"
-          : "bg-white/50 border-[#E8C547]/30 text-[#6B4423] hover:bg-[#E8C547]/10 hover:border-[#E8C547]/50"
-      }`}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <span className="relative z-10">{cat}</span>
-      <div
-        className={`absolute inset-0 bg-gradient-to-r from-[#E8C547] to-[#D68910] opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-      ></div>
-    </motion.button>
-  ))}
-</div>
-
+        {/* Category Buttons */}
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-3 lg:w-2/3 mx-auto mb-12">
+          {categories.map((cat) => (
+            <motion.button
+              key={cat}
+              onClick={() => handleCategoryChange(cat)}
+              className={`px-6 py-3 cursor-pointer rounded-full font-[12px] border-2 transition-all duration-300 relative overflow-hidden group ${
+                selectedCategory === cat
+                  ? "bg-[#E8C547] text-[#5D4037] border-[#E8C547] shadow-lg"
+                  : "bg-white/50 border-[#E8C547]/30 text-[#6B4423] hover:bg-[#E8C547]/10 hover:border-[#E8C547]/50"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="relative z-10">{cat}</span>
+              <div
+                className={`absolute inset-0 bg-gradient-to-r from-[#E8C547] to-[#D68910] opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+              ></div>
+            </motion.button>
+          ))}
+        </div>
 
         {/* Artwork Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -332,7 +335,7 @@ const Gallery = () => {
               <motion.button
                 className="absolute top-4 right-4 w-12 h-12 bg-[#E8C547]/90 backdrop-blur-sm rounded-full flex items-center justify-center text-[#5D4037] opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg"
                 whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FaEye className="text-sm" />
               </motion.button>
@@ -421,155 +424,266 @@ const Gallery = () => {
           </div>
         )}
 
-        {/* Modal */}
+        {/* Enhanced Professional Modal */}
         <Modal
           isOpen={!!modalArtwork}
           onRequestClose={closeModal}
           contentLabel="Artwork Details"
-          overlayClassName="fixed inset-0 bg-[#5D4037]/80 backdrop-blur-sm flex items-center justify-center z-50"
-          className="bg-white/95 backdrop-blur-sm rounded-3xl max-w-4xl mx-4 p-0 relative shadow-2xl max-h-[95vh] overflow-hidden border border-[#E8C547]/20"
+          overlayClassName="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+          className="bg-white rounded-3xl max-w-6xl max-h-[95vh] w-full flex flex-col outline-none shadow-2xl overflow-hidden"
         >
           {modalArtwork && (
-            <div className="p-0 h-full flex flex-col">
-              {/* Close Button */}
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 z-20 text-[#6B4423] hover:text-[#D68910] text-2xl font-bold bg-white/80 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-200"
-              >
-                ×
-              </button>
-
-              {/* Header */}
-              <div className="bg-gradient-to-r from-[#E8C547] to-[#D68910] p-6 text-white relative overflow-hidden">
-                <h2 className="text-3xl font-serif font-bold mb-2">
-                  {modalArtwork.title}
-                </h2>
-                <div className="flex items-center gap-4 text-sm opacity-90">
-                  <span className="flex items-center gap-1">
-                    <FaPalette className="text-white/80" />
-                    {modalArtwork.medium}
-                  </span>
-                  <span>•</span>
-                  <span>{modalArtwork.year}</span>
-                  <span>•</span>
-                  <span>{modalArtwork.dimensions}</span>
-                </div>
-              </div>
-
-              {/* Image Slider */}
-              <div className="p-6 pb-4">
-                <Swiper
-                  modules={[Navigation]}
-                  navigation={{
-                    nextEl: ".artwork-prev",
-                    prevEl: ".artwork-next",
-                  }}
-                  className="rounded-2xl overflow-hidden shadow-lg"
-                  style={{ height: "400px" }}
-                >
-                  {modalArtwork.slider.map((img, i) => (
-                    <SwiperSlide key={i}>
-                      <div className="h-full flex items-center justify-center">
-                        <img
-                          src={img}
-                          alt={`${modalArtwork.title} - View ${i + 1}`}
-                          className="w-full h-full object-contain max-w-full max-h-full"
-                        />
+            <div className="h-full flex flex-col">
+              {/* Enhanced Header */}
+              <div className="relative">
+                <div className="bg-gradient-to-r from-[#2C1810] via-[#5D4037] to-[#8B4513] px-8 py-6 text-white relative overflow-hidden">
+                  {/* Subtle background pattern - Simplified */}
+                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_25%_25%,#E8C547_0%,transparent_50%),radial-gradient(circle_at_75%_75%,#D68910_0%,transparent_50%)]"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h1 className="text-2xl md:text-4xl font-serif font-bold mb-2 leading-tight">
+                          {modalArtwork.title}
+                        </h1>
+                        <div className="flex flex-wrap items-center gap-6 text-sm opacity-90">
+                          <span className="flex items-center gap-2">
+                            <FaPalette className="text-[#E8C547]" />
+                            {modalArtwork.medium}
+                          </span>
+                          <span className="flex items-center gap-2">
+                            <FaRulerCombined className="text-[#E8C547]" />
+                            {modalArtwork.dimensions}
+                          </span>
+                          <span className="flex items-center gap-2">
+                            <FaCalendarAlt className="text-[#E8C547]" />
+                            {modalArtwork.year}
+                          </span>
+                          <span className="bg-white/20 px-3 py-1 rounded-full text-xs font-medium">
+                            {modalArtwork.category}
+                          </span>
+                        </div>
                       </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-                <div className="artwork-prev absolute top-1/2 -translate-y-1/2 left-4 z-10 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:shadow-xl transition-shadow">
-                  <FaAngleLeft size={16} className="text-[#6B4423]" />
-                </div>
-                <div className="artwork-next absolute top-1/2 -translate-y-1/2 right-4 z-10 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:shadow-xl transition-shadow">
-                  <FaAngleRight size={16} className="text-[#6B4423]" />
+                      
+                      {/* Close button */}
+                      <motion.button
+                        onClick={closeModal}
+                        className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <span className="text-xl font-bold">×</span>
+                      </motion.button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-6 flex-1 overflow-y-auto">
-                {/* Description */}
-                <div className="mb-6">
-                  <h4 className="font-serif text-xl font-semibold text-[#5D4037] mb-3 flex items-center gap-2">
-                    <FaImage className="text-[#D68910]" />
-                    About This Piece
-                  </h4>
-                  <p className="text-[#6B4423] leading-relaxed text-base">
-                    {modalArtwork.description}
-                  </p>
-                </div>
-
-                {/* Materials & Techniques */}
-                <div className="mb-6">
-                  <h4 className="font-serif text-xl font-semibold text-[#5D4037] mb-3 flex items-center gap-2">
-                    <FaPaintBrush className="text-[#D68910]" />
-                    Materials & Process
-                  </h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <h5 className="font-medium text-[#8B4513] mb-2">
-                        Materials:
-                      </h5>
-                      <p className="text-[#6B4423]">{modalArtwork.materials}</p>
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-[#8B4513] mb-2">
-                        Techniques:
-                      </h5>
-                      <ul className="text-[#6B4423] space-y-1 list-disc list-inside">
-                        {modalArtwork.techniques.map((tech, idx) => (
-                          <li key={idx} className="text-sm">
-                            {tech}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  {modalArtwork.processNotes && (
-                    <div className="mt-4 p-3 bg-[#F8EDE3]/50 rounded-lg">
-                      <p className="text-sm text-[#8B4513] italic">
-                        "{modalArtwork.processNotes}"
-                      </p>
-                    </div>
-                  )}
-                </div>
-
-                {/* Availability */}
-                <div className="mb-6 p-4 rounded-xl border-2 border-[#E8C547]/20">
-                  <div className="flex items-center justify-between">
-                    <h4 className="font-serif text-lg font-semibold text-[#5D4037] flex items-center gap-2">
-                      <FaTags className="text-[#D68910]" />
-                      Availability
-                    </h4>
-                    <span
-                      className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                        modalArtwork.availability === "Available for purchase"
-                          ? "bg-[#E8C547]/20 text-[#D68910] border border-[#E8C547]/30"
-                          : "bg-gray-100/50 text-gray-500"
-                      }`}
+              <div className="flex-1 flex overflow-hidden">
+                {/* Left Side - Image Gallery */}
+                <div className="w-full lg:w-2/3 p-8 bg-gradient-to-br from-white/80 to-[#FDFAF2]/80">
+                  <div className="relative">
+                    <Swiper
+                      modules={[Navigation]}
+                      navigation={{
+                        nextEl: ".artwork-prev",
+                        prevEl: ".artwork-next",
+                      }}
+                      className="rounded-3xl overflow-hidden shadow-2xl"
+                      style={{ height: "500px" }}
+                      spaceBetween={20}
+                      grabCursor={true}
                     >
-                      {modalArtwork.availability}
-                    </span>
-                  </div>
-                  {modalArtwork.price && modalArtwork.price !== "SOLD" && (
-                    <div className="mt-3 pt-3 border-t border-[#E8C547]/10">
-                      <p className="text-2xl font-serif font-bold text-[#5D4037]">
-                        {modalArtwork.price}
-                      </p>
+                      {modalArtwork.slider.map((img, i) => (
+                        <SwiperSlide key={i}>
+                          <div className="h-full flex items-center justify-center p-2 pb-2">
+                            <motion.div
+                              className="relative w-full h-full max-w-md mx-auto"
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.5 }}
+                            >
+                              <img
+                                src={img}
+                                alt={`${modalArtwork.title} - View ${i + 1}`}
+                                className="w-full h-full object-contain rounded-3xl shadow-2xl border-8 border-white/50"
+                              />
+                              {/* Image number indicator */}
+                              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                {i + 1} / {modalArtwork.slider.length}
+                              </div>
+                            </motion.div>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+
+                    {/* Navigation buttons */}
+                    <motion.button
+                      className="artwork-prev absolute top-1/2 -translate-y-1/2 left-0 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 z-10"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <FaAngleLeft size={16} className="text-[#5D4037]" />
+                    </motion.button>
+                    
+                    <motion.button
+                      className="artwork-next absolute top-1/2 -translate-y-1/2 right-0 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 z-10"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <FaAngleRight size={16} className="text-[#5D4037]" />
+                    </motion.button>
+
+                    {/* Thumbnail navigation */}
+                    <div className="flex gap-2 mt-6 justify-center overflow-x-auto pb-2">
+                      {modalArtwork.slider.map((_, i) => (
+                        <motion.button
+                          key={i}
+                          className={`w-16 h-12 rounded-xl overflow-hidden border-2 transition-all duration-300 flex-shrink-0 ${
+                            i === 0 ? 'border-[#E8C547] shadow-md' : 'border-gray-200'
+                          }`}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <img
+                            src={modalArtwork.slider[i]}
+                            alt={`Thumbnail ${i + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </motion.button>
+                      ))}
                     </div>
-                  )}
+                  </div>
                 </div>
 
-                {/* Contact Button */}
-                {modalArtwork.availability === "Available for purchase" && (
-                  <div className="text-center mt-6 pt-4 border-t border-[#E8C547]/10">
-                    <button className="px-8 py-3 bg-gradient-to-r from-[#E8C547] to-[#D68910] text-[#5D4037] font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto">
-                      <FaPalette className="text-sm" />
-                      Inquire About This Piece
-                    </button>
+                {/* Right Side - Detailed Content */}
+                <div className="w-full lg:w-1/3 p-8 bg-white/95 border-l border-[#E8C547]/20 overflow-y-auto">
+                  {/* Description Section */}
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-serif font-bold text-[#5D4037] mb-4 flex items-center gap-3">
+                      <FaImage className="text-[#D68910] text-xl" />
+                      About This Piece
+                    </h3>
+                    <div className="space-y-4">
+                      <p className="text-[#6B4423] leading-relaxed text-lg">
+                        {modalArtwork.description}
+                      </p>
+                      {modalArtwork.processNotes && (
+                        <div className="p-4 bg-gradient-to-r from-[#F8EDE3]/50 to-[#E8C547]/10 rounded-2xl border border-[#E8C547]/20">
+                          <div className="flex items-start gap-3">
+                            <FaQuoteLeft className="text-[#D68910] mt-1 flex-shrink-0" />
+                            <p className="text-[#8B4513] italic text-sm leading-relaxed">
+                              {modalArtwork.processNotes}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                )}
+
+                  {/* Technical Details */}
+                  <div className="mb-8">
+                    <h3 className="text-xl font-serif font-semibold text-[#5D4037] mb-4 flex items-center gap-2">
+                      <FaPaintBrush className="text-[#D68910]" />
+                      Technical Details
+                    </h3>
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="space-y-2">
+                          <h4 className="font-medium text-[#8B4513] flex items-center gap-2">
+                            <FaBrush className="text-[#D68910]" />
+                            Materials
+                          </h4>
+                          <p className="text-[#6B4423] bg-[#F8EDE3]/30 px-3 py-2 rounded-lg">
+                            {modalArtwork.materials}
+                          </p>
+                        </div>
+                        <div className="space-y-2">
+                          <h4 className="font-medium text-[#8B4513] flex items-center gap-2">
+                            Techniques
+                          </h4>
+                          <div className="space-y-1">
+                            {modalArtwork.techniques.map((tech, idx) => (
+                              <span
+                                key={idx}
+                                className="inline-block bg-white/50 px-3 py-1 rounded-full text-xs text-[#6B4423] border border-[#E8C547]/20"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Availability & Pricing */}
+                  <div className="mb-8 p-6 rounded-2xl border-2 bg-gradient-to-br from-[#FDFAF2] to-[#F8EDE3] border-[#E8C547]/20">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-xl font-serif font-semibold text-[#5D4037] flex items-center gap-2">
+                        <FaTags className="text-[#D68910]" />
+                        Availability
+                      </h3>
+                      <div className={`px-4 py-2 rounded-full text-sm font-semibold ${
+                        modalArtwork.availability === "Available for purchase"
+                          ? "bg-[#E8C547] text-[#5D4037] shadow-md"
+                          : modalArtwork.availability === "Sold"
+                          ? "bg-gray-100 text-gray-500"
+                          : "bg-blue-100 text-blue-700"
+                      }`}>
+                        {modalArtwork.availability}
+                      </div>
+                    </div>
+                    
+                    {modalArtwork.price && modalArtwork.price !== "SOLD" && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="text-center pt-4 border-t border-[#E8C547]/20"
+                      >
+                        <p className="text-3xl font-serif font-bold text-[#5D4037] mb-2">
+                          {modalArtwork.price}
+                        </p>
+                        <p className="text-sm text-[#8B4513] opacity-75">
+                          Includes certificate of authenticity
+                        </p>
+                      </motion.div>
+                    )}
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="space-y-3">
+                    {modalArtwork.availability === "Available for purchase" && (
+                      <motion.button
+                        className="w-full py-4 bg-gradient-to-r from-[#E8C547] to-[#D68910] text-[#5D4037] font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 text-lg"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <FaHeart className="text-sm" />
+                        Inquire About This Piece
+                      </motion.button>
+                    )}
+                    
+                    <motion.button
+                      className="w-full py-3 bg-white/80 border-2 border-[#E8C547]/30 text-[#6B4423] font-medium rounded-2xl hover:bg-[#E8C547]/10 transition-all duration-300 flex items-center justify-center gap-2"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <FaShareAlt className="text-sm" />
+                      Share This Artwork
+                    </motion.button>
+                  </div>
+
+                  {/* Social proof */}
+                  <div className="mt-6 pt-4 border-t border-[#E8C547]/20">
+                    <p className="text-center text-sm text-[#8B4513] opacity-75 flex items-center justify-center gap-2">
+                      <FaHeart className="text-[#D68910]" />
+                      Loved by 127 collectors
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           )}
