@@ -1,11 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaBriefcase,
-  FaUsers,
-  FaHandshake,
-  FaHeart,
-} from "react-icons/fa";
+import { FaBriefcase, FaUsers, FaHandshake, FaHeart } from "react-icons/fa";
 
 const experiences = [
   {
@@ -22,43 +17,56 @@ const experiences = [
     impact: ["2K+ Members", "50+ Marriages Stopped"],
   },
   {
-    role: "Human Rights Advocate",
-    position: "Campaign Coordinator",
-    organization: "Student Action for Social Justice",
-    period: "Grade 12 & Post Graduate",
+    role: "Art Club President",
+    position: "President",
+    organization: "CGGC Art Club",
+    period: "Grades 9-12",
     description: [
-      "Organized awareness campaigns reaching 5,000+ students across 10 colleges.",
-      "Coordinated with NGOs to create safe spaces for at-risk youth.",
-      "Developed educational materials for 15 rural schools on gender equality.",
+      "Organized 8+ themed traditional art & illustration competitions",
+      "Launched 3 art fundamentals bootcamps",
+      "Built beginner skills development programs",
     ],
-    icon: FaHandshake,
-    impact: ["5K+ Students Reached", "15 Rural Schools"],
+    activityType: "Art",
+    participationGrades: [9, 10, 11, 12],
+    icon: "FaPalette",
+    impact: [
+      "8+ Competitions Organized",
+      "3 Bootcamps Launched",
+     
+    ],
   },
   {
-    role: "Community Outreach Volunteer",
-    position: "Team Leader",
-    organization: "Youth for Change Network",
-    period: "Grade 11–12",
+    role: "Digital Marketing Intern",
+    position: "Digital Marketing",
+    organization: "Delta Dev",
+    period: "Post-Graduate",
     description: [
-      "Led weekly outreach programs serving 200+ underprivileged children.",
-      "Organized workshops and skill-building sessions.",
-      "Worked with govt. officials to establish 3 village learning centers.",
+      "Ran IG/FB/Google ads campaigns that lifted traffic by 45%",
+      "Generated 1M impressions and secured 600 SQLs through targeted campaigns",
+      "Optimized ad performance and analyzed campaign metrics for maximum ROI",
     ],
-    icon: FaHeart,
-    impact: ["200+ Children", "3 Learning Centers", "Weekly Programs"],
+    activityType: "Internship",
+    participationGrades: ["Post-Graduate"],
+    icon: "FaBullhorn",
+    impact: ["45% Traffic Increase", "1M Impressions"],
   },
   {
-    role: "Social Impact Coordinator",
-    position: "Project Manager",
-    organization: "Empower Youth Initiative",
-    period: "Post Graduate",
+    role: "SEO Executive Junior",
+    position: "SEO Executive (Junior)",
+    organization: "Delta Dev",
+    period: "Post-Graduate",
     description: [
-      "Managed literacy project benefiting 1,500+ students.",
-      "Secured funding with 5 international NGOs.",
-      "Trained 50+ volunteer teachers with monitoring system.",
+      "Worked on 20+ SEO projects improving traffic/rankings via audits & strategy",
+      "Recognized for outstanding results and performance",
+      "Collaborated closely with web designers for integrated SEO implementation",
     ],
-    icon: FaBriefcase,
-    impact: ["1.5K+ Students", "50+ Teachers Trained"],
+    activityType: "Work (Paid)",
+    participationGrades: ["Post-Graduate"],
+    icon: "FaSearch",
+    impact: [
+      "20+ SEO Projects",
+      "Performance Recognition",
+    ],
   },
 ];
 
@@ -143,7 +151,8 @@ const Experience = () => {
                     {exp.role}
                   </h3>
                   <h4 className="text-[#D68910] font-medium text-md md:text-lg mb-1">
-                    {exp.position} <span className="text-[#6B4423]">• {exp.organization}</span>
+                    {exp.position}{" "}
+                    <span className="text-[#6B4423]">• {exp.organization}</span>
                   </h4>
                   <p className="text-[12px] text-[#8B4513] bg-[#F8EDE3]/60 px-3 py-1 inline-block rounded-full mb-4">
                     {exp.period}
@@ -180,7 +189,6 @@ const Experience = () => {
       </motion.div>
 
       {/* Closing Note */}
-      
     </section>
   );
 };
