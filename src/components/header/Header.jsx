@@ -6,11 +6,11 @@ import "./header.css";
 import logo from "./../../assets/about/logo.png";
 
 const navItems = [
-  { path: "/", label: "Home" },
+  { path: "home", label: "Home" },
   { path: "about", label: "About" },
   { path: "education", label: "Education" },
   { path: "experience", label: "Experience" },
-  { path: "portfolio", label: "Gallery" },
+  { path: "gallery", label: "Gallery" },
   { path: "contact", label: "Contact" },
 ];
 

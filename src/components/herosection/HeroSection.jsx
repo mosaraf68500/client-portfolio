@@ -56,7 +56,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="herosection" className="relative min-h-screen">
+    <section id="home" className="relative min-h-screen">
       <style jsx>{`
         :global(.hero-gradient) {
           background: linear-gradient(135deg, 

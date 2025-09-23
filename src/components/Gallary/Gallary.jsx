@@ -247,7 +247,7 @@ const Gallery = () => {
         <div className="absolute bottom-20 right-10 w-20 h-20 bg-[#D68910]/20 rounded-full blur-xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           className="text-2xl lg:text-4xl font-serif font-bold text-center mb-4 text-[#5D4037]"
           initial={{ opacity: 0, y: 40 }}
@@ -424,19 +424,19 @@ const Gallery = () => {
           </div>
         )}
 
-        {/* Enhanced Professional Modal */}
+        {/* Enhanced Professional Modal with Larger Images */}
         <Modal
           isOpen={!!modalArtwork}
           onRequestClose={closeModal}
           contentLabel="Artwork Details"
           overlayClassName="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4"
-          className="bg-white rounded-3xl max-w-6xl max-h-[95vh] w-full flex flex-col outline-none shadow-2xl overflow-hidden"
+          className="bg-white rounded-3xl max-w-7xl max-h-[95vh] w-full flex flex-col outline-none shadow-2xl overflow-hidden"
         >
           {modalArtwork && (
             <div className="h-full flex flex-col">
               {/* Enhanced Header */}
               <div className="relative">
-                <div className="bg-gradient-to-r from-[#2C1810] via-[#5D4037] to-[#8B4513] px-8 py-6 text-white relative overflow-hidden">
+                <div className="bg-gradient-to-r from-[#2C1810] via-[#5D4037] to-[#8B4513] px-4 md:px-8 py-6 text-white relative overflow-hidden">
                   {/* Subtle background pattern - Simplified */}
                   <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_25%_25%,#E8C547_0%,transparent_50%),radial-gradient(circle_at_75%_75%,#D68910_0%,transparent_50%)]"></div>
                   
@@ -479,26 +479,37 @@ const Gallery = () => {
                 </div>
               </div>
 
-              <div className="flex-1 flex overflow-hidden">
-                {/* Left Side - Image Gallery */}
-                <div className="w-full lg:w-2/3 p-8 bg-gradient-to-br from-white/80 to-[#FDFAF2]/80">
+              <div className="flex-1 flex flex-col lg:flex-row overflow-hidden">
+                {/* Left Side - Image Gallery with Larger Images */}
+                <div className="w-full lg:w-2/3 p-4 md:p-8 bg-gradient-to-br from-white/80 to-[#FDFAF2]/80 order-1">
                   <div className="relative">
+                    {/* Larger Swiper container */}
                     <Swiper
                       modules={[Navigation]}
                       navigation={{
-                        nextEl: ".artwork-prev",
-                        prevEl: ".artwork-next",
+                        nextEl: ".artwork-next",
+                        prevEl: ".artwork-prev",
                       }}
                       className="rounded-3xl overflow-hidden shadow-2xl"
-                      style={{ height: "500px" }}
+                      style={{ height: "450px" }}
                       spaceBetween={20}
                       grabCursor={true}
+                      breakpoints={{
+                        640: {
+                          height: 500,
+                          spaceBetween: 20,
+                        },
+                        1024: {
+                          height: 600,
+                          spaceBetween: 20,
+                        },
+                      }}
                     >
                       {modalArtwork.slider.map((img, i) => (
                         <SwiperSlide key={i}>
-                          <div className="h-full flex items-center justify-center p-2 pb-2">
+                          <div className="h-full flex items-center justify-center p-2">
                             <motion.div
-                              className="relative w-full h-full max-w-md mx-auto"
+                              className="relative w-full h-full max-w-lg mx-auto"
                               initial={{ opacity: 0, scale: 0.9 }}
                               animate={{ opacity: 1, scale: 1 }}
                               transition={{ duration: 0.5 }}
@@ -506,7 +517,7 @@ const Gallery = () => {
                               <img
                                 src={img}
                                 alt={`${modalArtwork.title} - View ${i + 1}`}
-                                className="w-full h-full object-contain rounded-3xl shadow-2xl border-8 border-white/50"
+                                className="w-full h-full object-contain rounded-3xl shadow-2xl border-8 border-white/50 max-h-full"
                               />
                               {/* Image number indicator */}
                               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -520,7 +531,7 @@ const Gallery = () => {
 
                     {/* Navigation buttons */}
                     <motion.button
-                      className="artwork-prev absolute top-1/2 -translate-y-1/2 left-0 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 z-10"
+                      className="artwork-prev absolute top-1/2 -translate-y-1/2 left-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 z-10"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -528,7 +539,7 @@ const Gallery = () => {
                     </motion.button>
                     
                     <motion.button
-                      className="artwork-next absolute top-1/2 -translate-y-1/2 right-0 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 z-10"
+                      className="artwork-next absolute top-1/2 -translate-y-1/2 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 z-10"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -540,7 +551,7 @@ const Gallery = () => {
                       {modalArtwork.slider.map((_, i) => (
                         <motion.button
                           key={i}
-                          className={`w-16 h-12 rounded-xl overflow-hidden border-2 transition-all duration-300 flex-shrink-0 ${
+                          className={`w-20 h-14 rounded-xl overflow-hidden border-2 transition-all duration-300 flex-shrink-0 ${
                             i === 0 ? 'border-[#E8C547] shadow-md' : 'border-gray-200'
                           }`}
                           whileHover={{ scale: 1.05 }}
@@ -557,16 +568,16 @@ const Gallery = () => {
                   </div>
                 </div>
 
-                {/* Right Side - Detailed Content */}
-                <div className="w-full lg:w-1/3 p-8 bg-white/95 border-l border-[#E8C547]/20 overflow-y-auto">
+                {/* Right Side - Detailed Content - Adjusted for larger images */}
+                <div className="w-full lg:w-1/3 p-4 md:p-8 bg-white/95 border-l border-[#E8C547]/20 overflow-y-auto order-2">
                   {/* Description Section */}
                   <div className="mb-8">
-                    <h3 className="text-2xl font-serif font-bold text-[#5D4037] mb-4 flex items-center gap-3">
-                      <FaImage className="text-[#D68910] text-xl" />
+                    <h3 className="text-xl font-serif font-bold text-[#5D4037] mb-4 flex items-center gap-3">
+                      <FaImage className="text-[#D68910] text-lg" />
                       About This Piece
                     </h3>
                     <div className="space-y-4">
-                      <p className="text-[#6B4423] leading-relaxed text-lg">
+                      <p className="text-[#6B4423] leading-relaxed text-[12px] md:text-[15px]">
                         {modalArtwork.description}
                       </p>
                       {modalArtwork.processNotes && (
@@ -582,103 +593,16 @@ const Gallery = () => {
                     </div>
                   </div>
 
-                  {/* Technical Details */}
-                  <div className="mb-8">
-                    <h3 className="text-xl font-serif font-semibold text-[#5D4037] mb-4 flex items-center gap-2">
-                      <FaPaintBrush className="text-[#D68910]" />
-                      Technical Details
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="grid grid-cols-2 gap-4 text-sm">
-                        <div className="space-y-2">
-                          <h4 className="font-medium text-[#8B4513] flex items-center gap-2">
-                            <FaBrush className="text-[#D68910]" />
-                            Materials
-                          </h4>
-                          <p className="text-[#6B4423] bg-[#F8EDE3]/30 px-3 py-2 rounded-lg">
-                            {modalArtwork.materials}
-                          </p>
-                        </div>
-                        <div className="space-y-2">
-                          <h4 className="font-medium text-[#8B4513] flex items-center gap-2">
-                            Techniques
-                          </h4>
-                          <div className="space-y-1">
-                            {modalArtwork.techniques.map((tech, idx) => (
-                              <span
-                                key={idx}
-                                className="inline-block bg-white/50 px-3 py-1 rounded-full text-xs text-[#6B4423] border border-[#E8C547]/20"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                   {/* Availability & Pricing */}
-                  <div className="mb-8 p-6 rounded-2xl border-2 bg-gradient-to-br from-[#FDFAF2] to-[#F8EDE3] border-[#E8C547]/20">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-serif font-semibold text-[#5D4037] flex items-center gap-2">
-                        <FaTags className="text-[#D68910]" />
-                        Availability
-                      </h3>
-                      <div className={`px-4 py-2 rounded-full text-sm font-semibold ${
-                        modalArtwork.availability === "Available for purchase"
-                          ? "bg-[#E8C547] text-[#5D4037] shadow-md"
-                          : modalArtwork.availability === "Sold"
-                          ? "bg-gray-100 text-gray-500"
-                          : "bg-blue-100 text-blue-700"
-                      }`}>
-                        {modalArtwork.availability}
-                      </div>
-                    </div>
-                    
-                    {modalArtwork.price && modalArtwork.price !== "SOLD" && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="text-center pt-4 border-t border-[#E8C547]/20"
-                      >
-                        <p className="text-3xl font-serif font-bold text-[#5D4037] mb-2">
-                          {modalArtwork.price}
-                        </p>
-                        <p className="text-sm text-[#8B4513] opacity-75">
-                          Includes certificate of authenticity
-                        </p>
-                      </motion.div>
-                    )}
-                  </div>
+                 
+                 
 
                   {/* Action Buttons */}
-                  <div className="space-y-3">
-                    {modalArtwork.availability === "Available for purchase" && (
-                      <motion.button
-                        className="w-full py-4 bg-gradient-to-r from-[#E8C547] to-[#D68910] text-[#5D4037] font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 text-lg"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <FaHeart className="text-sm" />
-                        Inquire About This Piece
-                      </motion.button>
-                    )}
-                    
-                    <motion.button
-                      className="w-full py-3 bg-white/80 border-2 border-[#E8C547]/30 text-[#6B4423] font-medium rounded-2xl hover:bg-[#E8C547]/10 transition-all duration-300 flex items-center justify-center gap-2"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <FaShareAlt className="text-sm" />
-                      Share This Artwork
-                    </motion.button>
-                  </div>
+                 
 
                   {/* Social proof */}
                   <div className="mt-6 pt-4 border-t border-[#E8C547]/20">
-                    <p className="text-center text-sm text-[#8B4513] opacity-75 flex items-center justify-center gap-2">
+                    <p className="text-center text-[10px] text-[#8B4513] opacity-75 flex items-center justify-center gap-2">
                       <FaHeart className="text-[#D68910]" />
                       Loved by 127 collectors
                     </p>
