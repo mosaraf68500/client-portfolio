@@ -28,12 +28,8 @@ const experiences = [
     ],
     activityType: "Art",
     participationGrades: [9, 10, 11, 12],
-    icon: "FaPalette",
-    impact: [
-      "8+ Competitions Organized",
-      "3 Bootcamps Launched",
-     
-    ],
+    icon: FaUsers,
+    impact: ["8+ Competitions Organized", "3 Bootcamps Launched"],
   },
   {
     role: "Digital Marketing Intern",
@@ -47,7 +43,7 @@ const experiences = [
     ],
     activityType: "Internship",
     participationGrades: ["Post-Graduate"],
-    icon: "FaBullhorn",
+    icon: FaUsers,
     impact: ["45% Traffic Increase", "1M Impressions"],
   },
   {
@@ -62,11 +58,8 @@ const experiences = [
     ],
     activityType: "Work (Paid)",
     participationGrades: ["Post-Graduate"],
-    icon: "FaSearch",
-    impact: [
-      "20+ SEO Projects",
-      "Performance Recognition",
-    ],
+    icon: FaUsers,
+    impact: ["20+ SEO Projects", "Performance Recognition"],
   },
 ];
 
